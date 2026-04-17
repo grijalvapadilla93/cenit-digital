@@ -135,20 +135,23 @@ export default function CasosPage() {
                   // Alejandro Requena - 4 images
                   project.images.map((img, imgIndex) => (
                     <div key={imgIndex} className="relative overflow-hidden rounded-sm">
-                      <Image
+                      <img
                         src={img}
                         alt={`${project.title} ${imgIndex + 1}`}
-                        fill
-                        className="object-cover transition-all duration-700"
+                        className="w-full h-full object-cover transition-all duration-700"
                       />
                     </div>
                   ))
                 ) : (
-                  // Al Carbón & Yeguada - gradient backgrounds
-                  <>
-                    <div className={`w-full h-full bg-gradient-to-br ${project.gradient} transition-all duration-700`} />
+                  // Al Carbón & Yeguada - use images instead of gradients
+                  <div className="relative overflow-hidden rounded-sm">
+                    <img
+                      src={project.images[0]}
+                      alt={`${project.title} preview`}
+                      className="w-full h-full object-cover transition-all duration-700"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
-                  </>
+                  </div>
                 )}
                 <div className="absolute top-4 left-4 bg-primary px-3 py-1 text-on-primary font-[family-name:var(--font-space-grotesk)] text-[10px] uppercase font-bold tracking-tighter">
                   {project.tag}
