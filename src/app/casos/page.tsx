@@ -172,8 +172,6 @@ export default function CasosPage() {
                   </a>
                 </div>
               </div>
-              {/* Decorative */}
-              </div>
             </div>
           ))}
         </div>
