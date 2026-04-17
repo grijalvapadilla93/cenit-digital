@@ -1,0 +1,295 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
+  --font-mono: var(--font-geist-mono);
+
+  /* Stitch Design System Colors */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-container: var(--primary-container);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Surface tokens */
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-on-primary: var(--on-primary);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* =========================================
+   Stitch Design System — Dark Purple Theme
+   ========================================= */
+:root {
+  --background: #131313;
+  --foreground: #e5e2e1;
+  --card: #1c1b1b;
+  --card-foreground: #e5e2e1;
+  --popover: #201f1f;
+  --popover-foreground: #e5e2e1;
+  --primary: #d1bcff;
+  --primary-foreground: #3d0090;
+  --primary-container: #7f56d9;
+  --secondary: #d2bbff;
+  --secondary-foreground: #25005a;
+  --muted: #2a2a2a;
+  --muted-foreground: #958e9f;
+  --accent: #2a2a2a;
+  --accent-foreground: #e5e2e1;
+  --destructive: #ffb4ab;
+  --border: #494453;
+  --input: #494453;
+  --ring: #d1bcff;
+  --radius: 0.25rem;
+
+  /* Surface tokens */
+  --surface-dim: #131313;
+  --surface-container-lowest: #0e0e0e;
+  --surface-container-low: #1c1b1b;
+  --surface-container: #201f1f;
+  --surface-container-high: #2a2a2a;
+  --surface-container-highest: #353534;
+  --on-surface: #e5e2e1;
+  --on-surface-variant: #cbc3d5;
+  --outline: #958e9f;
+  --outline-variant: #494453;
+  --on-primary: #3d0090;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground select-none;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+/* No text selection */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow selection on inputs/textareas for usability */
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Circuit dot pattern */
+.circuit-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(209, 188, 255, 0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Accordion animation */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.accordion-item.active .accordion-content {
+  max-height: 300px;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Marquee ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Glow effect */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(209, 188, 255, 0.4);
+}
+
+/* =========================================
+   Subtle Animations
+   ========================================= */
+
+/* Scroll reveal - fade up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  /* Default: visible. Elements below viewport get .animate class to hide them */
+}
+
+.scroll-reveal.animate {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.scroll-reveal.animate.revealed {
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Staggered children */
+.scroll-reveal.revealed.stagger-1 { animation-delay: 0.1s; }
+.scroll-reveal.revealed.stagger-2 { animation-delay: 0.2s; }
+.scroll-reveal.revealed.stagger-3 { animation-delay: 0.3s; }
+.scroll-reveal.revealed.stagger-4 { animation-delay: 0.4s; }
+.scroll-reveal.revealed.stagger-5 { animation-delay: 0.5s; }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(209, 188, 255, 0.08);
+}
+
+/* Button press feedback */
+.btn-press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Link underline slide */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Subtle shimmer for primary buttons */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.btn-shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 100%
+  );
+}
+
+.btn-shimmer:hover {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Icon hover pulse */
+.icon-pulse {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-pulse:hover {
+  transform: scale(1.1);
+}
+
+/* Number counter entrance */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stat-number {
+  opacity: 0;
+}
+
+.stat-number.revealed {
+  animation: countUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Page enter animation — pure CSS, no JS needed */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  opacity: 0;
+  animation: pageEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
