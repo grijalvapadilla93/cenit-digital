@@ -33,10 +33,10 @@ export default function CasosPage() {
       tag: "Portafolio",
       url: "https://alejandro-requena.vercel.app/",
       images: [
-        "/casos/alejandro-requena/hero.jpeg",
-        "/casos/alejandro-requena/portafolio.jpeg",
-        "/casos/alejandro-requena/academia.jpeg",
-        "/casos/alejandro-requena/contacto.jpeg"
+        "/casos/alejandro-requena/hero.png",
+        "/casos/alejandro-requena/hero.png",
+        "/casos/alejandro-requena/hero.png",
+        "/casos/alejandro-requena/hero.png"
       ]
     },
     {
@@ -51,10 +51,10 @@ export default function CasosPage() {
       tag: "Restaurante",
       url: "https://al-carbon.vercel.app/",
       images: [
-        "/casos/al-carbon/hero.jpeg",
-        "/casos/al-carbon/menu.jpeg",
-        "/casos/al-carbon/eventos.jpeg",
-        "/casos/al-carbon/contacto.jpeg"
+        "/casos/al-carbon/hero.png",
+        "/casos/al-carbon/hero.png",
+        "/casos/al-carbon/hero.png",
+        "/casos/al-carbon/hero.png"
       ]
     },
     {
@@ -69,10 +69,10 @@ export default function CasosPage() {
       tag: "Restaurante & Ecuestre",
       url: "https://yeguada10.vercel.app/",
       images: [
-        "/casos/yeguada10/hero.jpeg",
-        "/casos/yeguada10/restaurante.jpeg",
-        "/casos/yeguada10/academia.jpeg",
-        "/casos/yeguada10/eventos.jpeg"
+        "/casos/yeguada10/hero.png",
+        "/casos/yeguada10/hero.png",
+        "/casos/yeguada10/hero.png",
+        "/casos/yeguada10/hero.png"
       ]
     }
   ];
