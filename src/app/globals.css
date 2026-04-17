@@ -97,6 +97,7 @@
   }
   body {
     @apply bg-background text-foreground select-none;
+    overflow-x: hidden;
   }
   html {
     @apply scroll-smooth;
