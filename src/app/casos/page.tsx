@@ -167,8 +167,6 @@ export default function CasosPage() {
                 </div>
               </div>
               {/* Decorative */}
-              <div className="absolute -right-12 top-1/2 -rotate-90 font-[family-name:var(--font-space-grotesk)] text-[120px] font-black text-white/[0.02] pointer-events-none select-none">
-                {project.subtitle.split(" ")[0].toUpperCase()}
               </div>
             </div>
           ))}
