@@ -33,10 +33,10 @@ export default function CasosPage() {
       tag: "Portafolio",
       url: "https://alejandro-requena.vercel.app/",
       images: [
-        "/casos/alejandro-requena/hero.png",
-        "/casos/alejandro-requena/hero.png",
-        "/casos/alejandro-requena/hero.png",
-        "/casos/alejandro-requena/hero.png"
+        "/casos/alejandro-requena/hero.jpeg",
+        "/casos/alejandro-requena/hero.jpeg",
+        "/casos/alejandro-requena/hero.jpeg",
+        "/casos/alejandro-requena/hero.jpeg"
       ]
     },
     {
@@ -51,10 +51,10 @@ export default function CasosPage() {
       tag: "Restaurante",
       url: "https://al-carbon.vercel.app/",
       images: [
-        "/casos/al-carbon/hero.png",
-        "/casos/al-carbon/hero.png",
-        "/casos/al-carbon/hero.png",
-        "/casos/al-carbon/hero.png"
+        "/casos/al-carbon/hero.jpeg",
+        "/casos/al-carbon/hero.jpeg",
+        "/casos/al-carbon/hero.jpeg",
+        "/casos/al-carbon/hero.jpeg"
       ]
     },
     {
@@ -69,10 +69,10 @@ export default function CasosPage() {
       tag: "Restaurante & Ecuestre",
       url: "https://yeguada10.vercel.app/",
       images: [
-        "/casos/yeguada10/hero.png",
-        "/casos/yeguada10/hero.png",
-        "/casos/yeguada10/hero.png",
-        "/casos/yeguada10/hero.png"
+        "/casos/yeguada10/hero.jpeg",
+        "/casos/yeguada10/hero.jpeg",
+        "/casos/yeguada10/hero.jpeg",
+        "/casos/yeguada10/hero.jpeg"
       ]
     }
   ];
@@ -129,8 +129,14 @@ export default function CasosPage() {
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
             <div className={`relative aspect-[16/10] overflow-hidden rounded-sm`}>
-                <div className={`w-full h-full bg-gradient-to-br ${project.gradient} transition-all duration-700`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
+                <div className="relative overflow-hidden rounded-sm h-full">
+                  <img
+                    src={project.images[0]}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
+                </div>
                 <div className="absolute top-4 left-4 bg-primary px-3 py-1 text-on-primary font-[family-name:var(--font-space-grotesk)] text-[10px] uppercase font-bold tracking-tighter">
                   {project.tag}
                 </div>
