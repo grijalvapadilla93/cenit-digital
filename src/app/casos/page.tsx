@@ -129,14 +129,8 @@ export default function CasosPage() {
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
             <div className={`relative aspect-[16/10] overflow-hidden rounded-sm`}>
-                <div className="relative overflow-hidden rounded-sm h-full">
-                  <img
-                    src={project.images[0]}
-                    alt={`${project.title} preview`}
-                    className="w-full h-full object-cover transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
-                </div>
+                <div className={`w-full h-full bg-gradient-to-br ${project.gradient} transition-all duration-700`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
                 <div className="absolute top-4 left-4 bg-primary px-3 py-1 text-on-primary font-[family-name:var(--font-space-grotesk)] text-[10px] uppercase font-bold tracking-tighter">
                   {project.tag}
                 </div>
