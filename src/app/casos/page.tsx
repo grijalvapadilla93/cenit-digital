@@ -1,9 +1,10 @@
-"use client";
+\"use client\";
 
 import { useState } from "react";
 import { useLang } from "@/lib/lang-context";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/icon";
+import SiteLayout from "@/components/site-layout";
 import Image from "next/image";
 
 export default function CasosPage() {
@@ -78,7 +79,7 @@ export default function CasosPage() {
   ];
 
   return (
-    <>
+    <SiteLayout>
       {/* Hero */}
       <section className="relative overflow-hidden px-8 py-20 lg:py-32 circuit-bg">
         <div className="max-w-[1440px] mx-auto">
@@ -205,6 +206,6 @@ export default function CasosPage() {
           </div>
         </div>
       </section>
-    </>
+    </SiteLayout>
   );
 }

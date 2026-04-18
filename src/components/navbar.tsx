@@ -36,7 +36,10 @@ export function Navbar() {
             >
               {lang === "en" ? "ES" : "EN"}
             </button>
-            <Button className="bg-primary text-on-primary px-6 py-2 font-[family-name:var(--font-space-grotesk)] font-bold hover:bg-primary/90 btn-press transition-all">
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary text-on-primary px-6 py-2 font-[family-name:var(--font-space-grotesk)] font-bold hover:bg-primary/90 btn-press transition-all"
+            >
               {t.nav.consultation}
             </Button>
           </div>
@@ -93,7 +96,7 @@ export function Navbar() {
             {lang === "en" ? "ES" : "EN"}
           </button>
           <Button
-            onClick={() => setOpen(false)}
+            onClick={() => { setOpen(false); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
             className="bg-primary text-on-primary px-8 py-3 font-[family-name:var(--font-space-grotesk)] font-bold hover:bg-primary/90 btn-press transition-all"
           >
             {t.nav.consultation}
