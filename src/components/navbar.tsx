@@ -11,7 +11,7 @@ export function Navbar() {
     <>
       <nav className="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
         <div className="flex justify-between items-center px-4 md:px-8 py-4 max-w-screen-2xl mx-auto">
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img
               src="/cenit-logo.png"
               alt="Cenit Digital"
