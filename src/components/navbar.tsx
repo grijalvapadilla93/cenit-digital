@@ -27,6 +27,12 @@ export function Navbar() {
             >
               {t.nav.caseStudies}
             </a>
+            <a
+              href="/ai"
+              className="text-white/70 hover:text-white transition-colors font-[family-name:var(--font-space-grotesk)] tracking-tight link-underline"
+            >
+              IA
+            </a>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -92,6 +98,18 @@ export function Navbar() {
           }}
         >
           {t.nav.caseStudies}
+        </a>
+        <a
+          href="/ai"
+          onClick={() => setOpen(false)}
+          className="text-2xl font-bold text-white hover:text-purple-400 transition-colors font-[family-name:var(--font-space-grotesk)]"
+          style={{
+            transform: open ? "translateY(0)" : "translateY(20px)",
+            opacity: open ? 1 : 0,
+            transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1) 100ms",
+          }}
+        >
+          IA
         </a>
 
         <div className="flex items-center gap-4 mt-8">
