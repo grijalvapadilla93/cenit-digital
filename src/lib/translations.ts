@@ -244,164 +244,155 @@ export const translations = {
       consultation: "Consultoría",
     },
     hero: {
-      badge: "Ingeniería Digital a Medida",
-      headlinePrefix: "Soluciones Digitales",
-      headlineGradient: "que Impulsan",
-      headlineSuffix: "tu Negocio",
+      badge: "AGENCIA DIGITAL · GUATEMALA",
+      headlinePrefix: "Más clientes.",
+      headlineGradient: "Menos trabajo manual.",
+      headlineSuffix: "",
       subtitle:
-        "Automatizamos, construimos y optimizamos la tecnología de tu empresa para que vos te enfoques en lo que importa: hacer crecer tu negocio.",
-      ctaPrimary: "Solicitar Proyecto",
-      ctaSecondary: "Ver Casos de Estudio",
-      cards: {
-        customLogic: "Lógica Propia",
-        uniqueFlows: "Flujos Únicos",
-        nicheInsights: "Insights de Nicho",
-        privateTech: "Tech Privada",
-      },
+        "Construimos páginas web y sistemas con IA para negocios guatemaltecos que quieren crecer sin contratar más personal.",
+      ctaPrimary: "Ver nuestro trabajo",
+      ctaSecondary: "Agendar llamada gratis",
+      cards: {},
     },
     services: {
-      badge: "Capacidades a Medida",
-      title: "Servicios de Arquitectura Personalizada",
+      badge: "Lo que hacemos",
+      title: "Servicios",
       items: {
         automations: {
           label: "Motor Propio",
-          title: "Automatizaciones Propietarias",
+          title: "Responde WhatsApp e Instagram automáticamente",
           description:
-            "Desarrollamos scripts autónomos únicos que se mapean perfectamente a tus protocolos internos, en lugar de forzar a tu equipo a workflows rígidos de terceros.",
+            "Tu negocio atiende clientes 24/7 sin que vos estés pegado al celular.",
         },
         dashboards: {
           label: "UI de Nicho",
-          title: "Dashboards Exclusivos",
+          title: "Ve las métricas de tu negocio desde el celular",
           description:
-            "Interfaces de inteligencia diseñadas alrededor de tus KPIs exactos, brindando claridad que las herramientas genéricas simplemente no pueden ofrecer.",
+            "Ventas, reservas y clientes nuevos — todo en una pantalla simple.",
         },
         crm: {
           label: "Hub Privado",
-          title: "Sistemas CRM a Medida",
+          title: "Nunca pierdas un cliente por no dar seguimiento",
           description:
-            "Construidos desde cero para tu ciclo de ventas específico, asegurando que cada dato capturado sea relevante para tu resultado final.",
+            "Cada lead entra al sistema y recibe seguimiento automático hasta que compra.",
         },
         web: {
-          title: "Infraestructura Web Propia",
+          title: "Tu página siempre activa, rápida y segura",
           description:
-            "Arquitecturas de alto rendimiento diseñadas para tus necesidades de seguridad y patrones de tráfico específicos.",
+            "Hosting, dominio y mantenimiento incluido. Sin sorpresas.",
         },
         ai: {
-          title: "Agentes de IA Especializados",
+          title: "Un asistente con IA que trabaja por vos 24/7",
           description:
-            "Chatbots y agentes de voz entrenados con el conocimiento único de tu industria y tono de marca.",
+            "Responde preguntas, agenda citas y filtra leads — todo sin intervención humana.",
         },
       },
     },
     process: {
-      badge: "Nuestro Flujo de Trabajo",
-      title: "Marco de Ejecución Personalizado",
+      badge: "PROCESO · 4 PASOS",
+      title: "Así trabajamos con vos",
       steps: [
         {
           number: "01",
           title: "Diagnóstico",
-          description: "Analizamos tu negocio, identificamos procesos manuales y puntos donde la tecnología puede ahorrarte tiempo y dinero.",
+          description: "Entendemos tu negocio en una llamada de 30 minutos",
         },
         {
           number: "02",
           title: "Propuesta",
-          description: "Diseñamos un plan técnico a tu medida: flujos de automatización, wireframes, y stack tecnológico claro desde el día uno.",
+          description: "Te presentamos exactamente qué vamos a construir y cuánto cuesta",
         },
         {
           number: "03",
           title: "Desarrollo",
-          description: "Construimos tu solución con revisiones constantes. Vés el progreso en tiempo real y nos ajustamos juntos.",
+          description: "Construimos en 7-21 días con actualizaciones constantes",
         },
         {
           number: "04",
           title: "Lanzamiento",
-          description: "Ponemos todo en producción, capacitamos a tu equipo, y nos encargamos del mantenimiento continuo.",
+          description: "Lanzamos y te enseñamos a usarlo. Soporte incluido.",
         },
       ],
     },
     stats: {
       items: [
-        { value: "98%", label: "Satisfacción de Clientes" },
-        { value: "250+", label: "Proyectos Entregados" },
-        { value: "15k", label: "Horas Ahorradas a Clientes" },
-        { value: "12ms", label: "Tiempo de Respuesta Promedio" },
+        { value: "3", label: "Negocios en Jalapa con sitio activo" },
+        { value: "+85%", label: "Aumento en reservas · La Fuga" },
+        { value: "72 hrs", label: "Tiempo promedio de entrega de demo" },
+        { value: "Q2,500", label: "Precio de entrada" },
       ],
     },
     testimonials: {
-      headline: "Nuestros clientes no tienen margen de error.",
+      headline: "Trabajamos con negocios reales en Guatemala",
       subtitle:
-        "En industrias de alto riesgo, la precisión no es una preferencia—es un requisito. Nos asociamos con líderes que exigen confiabilidad absoluta y estabilidad de ecosistema a largo plazo.",
-      trusted: "Confiado por líderes de la industria",
+        "Tres negocios en Jalapa ya tienen presencia digital profesional. ¿Querés ser el siguiente?",
+      trusted: "Clientes actuales",
       items: [
         {
-          company: "BAE SYSTEMS",
+          company: "AL CARBÓN",
           quote:
-            '"Entregar soluciones rentables e innovadoras en nuestras operaciones de manufactura es crítico para mantener una posición líder en el sector de combate aéreo del Reino Unido. Trabajar con Cenit Digital nos ayuda a asegurar esa ventaja para nuestros clientes."',
-          name: "PAUL",
-          role: "JEFE DE TECNOLOGÍA DE FUSELAJE @BAE SYSTEMS",
-        },
-        {
-          company: "NIAR",
-          quote:
-            '"Los dashboards especializados de Cenit Digital nos permitieron sincronizar datos de investigación complejos entre múltiples departamentos con precisión sub-milisegundo. Sus estándares de ingeniería no tienen comparación."',
-          name: "DRA. SARAH CHEN",
-          role: "DIRECTORA DE OPERACIONES DE GEMELO DIGITAL @NIAR",
-        },
-        {
-          company: "PALL CORPORATION",
-          quote:
-            '"Necesitábamos un sistema CRM personalizado que pudiera manejar la lógica intrincada de las cadenas de suministro globales de filtración. Lo que Cenit Digital entregó no fue solo software; fue una ventaja competitiva."',
-          name: "MARK R.",
-          role: "VP SENIOR DE LOGÍSTICA @PALL CORPORATION",
+            '"La demo que me entregaron convenció a todo el equipo antes de la primera reunión."',
+          name: "Francisco Quijada",
+          role: "Dueño de Al Carbón, Jalapa",
         },
       ],
     },
     faq: {
-      badge: "Preguntas Frecuentes",
-      title: "FAQ",
+      badge: "Preguntas frecuentes",
+      title: "Lo que siempre preguntan",
       items: [
         {
-          question: "¿Cuánto tiempo toma un proyecto típico?",
+          question: "¿Cuánto cuesta una página web?",
           answer:
-            "Depende de la complejidad. Una landing o automatización simple puede estar lista en 2-3 semanas. Un sistema personalizado con dashboards y chatbots toma entre 4-8 semanas. Siempre te damos un cronograma claro desde el inicio.",
+            "Depende de lo que necesites. Una landing page profesional empieza desde Q2,500. Un sitio completo con reservas, menú y WhatsApp integrado ronda Q5,000-15,000. Te damos precio exacto después de la llamada de diagnóstico.",
         },
         {
-          question: "¿Qué pasa después de que terminan el proyecto?",
+          question: "¿En cuánto tiempo me entregan el sitio?",
           answer:
-            "No desaparecemos. Ofrecemos mantenimiento continuo: actualizaciones, monitoreo, y soporte cuando lo necesités. Esto se maneja con una tarifa mensual fija para que tu sistema siempre esté funcionando al 100%.",
+            "Una demo funcional la entregamos en 72 horas. El sitio final toma entre 7 y 21 días dependiendo de la complejidad. Siempre con actualizaciones constantes durante el proceso.",
         },
         {
-          question: "¿Se pueden integrar con las herramientas que ya uso?",
+          question: "¿Qué pasa si quiero hacer cambios después?",
           answer:
-            "Sí, totalmente. Nos integramos con CRMs, pasarelas de pago, Google Sheets, WhatsApp, correos, y prácticamente cualquier herramienta que tenga API. Si ya lo usás, lo conectamos.",
+            "Los primeros 3 meses de soporte están incluidos. Después ofrecemos mantenimiento mensual con actualizaciones ilimitadas. Sin contratos forzosos — si no te gusta, cancelás cuando quieras.",
         },
         {
           question: "¿Necesito saber de tecnología para usar lo que construyen?",
           answer:
-            "Para nada. Diseñamos todo pensando en que sea fácil de usar. Las automatizaciones corren solas, los dashboards son visuales e intuitivos, y los chatbots se configuran para que no tengas que tocar nada técnico.",
+            "Para nada. Todo está diseñado para que lo manejes desde tu celular. Si sabés usar WhatsApp, podés usar cualquier sistema que construyamos.",
+        },
+        {
+          question: "¿Pueden hacer algo parecido a lo que le hicieron a Al Carbón?",
+          answer:
+            "Sí, y podemos adaptarlo a tu tipo de negocio. Cada proyecto es único — lo que hicimos para un restaurante es diferente a lo que haríamos para una tienda o un servicio.",
+        },
+        {
+          question: "¿Trabajan con negocios fuera de Jalapa?",
+          answer:
+            "Sí. Trabajamos 100% remoto con negocios en toda Guatemala. La llamada de diagnóstico es por videollamada y el proceso es igual de ágil sin importar dónde estés.",
         },
       ],
     },
     contact: {
-      title: "Inicia Tu Proyecto a Medida",
+      title: "¿Hablamos 20 minutos?",
       subtitle:
-        "Comparte tu visión con nosotros. Nos especializamos en ingeniar soluciones personalizadas y mantenerlas de por vida a través de nuestro marco integral de soporte post-entrega.",
+        "Sin compromiso. Te decimos si podemos ayudarte y cuánto costaría.",
       benefits: {
-        roadmap: "Hoja de Ruta Técnica Personalizada",
-        security: "Seguridad y Actualizaciones Continuas",
-        stability: "Estabilidad de Rendimiento Mensual",
+        roadmap: "Hoja de Ruta Personalizada",
+        security: "Seguridad y Actualizaciones",
+        stability: "Estabilidad Mensual",
       },
       form: {
         fullName: "Nombre Completo",
         fullNamePlaceholder: "Juan Pérez",
-        email: "Correo de Trabajo",
-        emailPlaceholder: "juan@empresa.com",
-        company: "Nombre de la Empresa",
-        companyPlaceholder: "Ingresa el nombre de tu empresa",
+        email: "WhatsApp",
+        emailPlaceholder: "+502 1234 5678",
+        company: "Tipo de Negocio",
+        companyPlaceholder: "Ej: Restaurante, Tienda, Servicio",
         details: "Detalles del Proyecto",
-        detailsPlaceholder: "Describe tus necesidades de infraestructura únicas...",
-        submit: "Enviar Solicitud",
-        note: "Nota: Todos los proyectos incluyen mantenimiento mensual obligatorio por seguridad y estabilidad a largo plazo.",
+        detailsPlaceholder: "Contanos qué necesitás...",
+        submit: "Quiero una llamada gratis",
+        note: "Respuesta en menos de 24 horas.",
       },
     },
     footer: {
@@ -412,10 +403,10 @@ export const translations = {
     },
     // Case Studies Page
     casos: {
-      badge: "Arquitectura de Soluciones Digitales",
-      headlinePrefix: "Impacto Real:",
-      headlineGradient: "Nuestros Casos de Estudio",
-      subtitle: "Soluciones digitales diseñadas para escalar tu negocio y generar resultados medibles.",
+      badge: "PORTAFOLIO",
+      headlinePrefix: "Lo que hemos",
+      headlineGradient: "construido",
+      subtitle: "Proyectos reales para negocios reales en Guatemala.",
       filters: {
         all: "Todos los Proyectos",
         automation: "Automatización",
@@ -426,11 +417,11 @@ export const translations = {
       viewCaseStudy: "Ver Caso Completo",
       explore: "Explorar Solución",
       cta: {
-        headlinePrefix: "Listo para construir tu",
-        headlineGradient: "próximo proyecto?",
-        subtitle: "Unite a las empresas que ya usan soluciones digitales a medida para dominar sus mercados.",
-        primary: "Trabajá Con Nosotros",
-        secondary: "Nuestra Metodología",
+        headlinePrefix: "¿Querés algo",
+        headlineGradient: "así para tu negocio?",
+        subtitle: "Trabajamos con negocios que quieren crecer sin complicarse con tecnología.",
+        primary: "Hablemos →",
+        secondary: "Ver cómo trabajamos",
       },
       projects: [
         {
