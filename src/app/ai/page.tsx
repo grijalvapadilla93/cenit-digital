@@ -1,28 +1,58 @@
+"use client";
+
+import { useState } from "react";
 import SiteLayout from "@/components/site-layout";
 import { ChatDemo } from "@/components/chat-demo";
 import { NotificationPanel } from "@/components/notification-panel";
+import { ScrambleText } from "@/components/scramble-text";
 
 export default function AIDemoPage() {
+  const [heroReady, setHeroReady] = useState(false);
+
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-24 pb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-primary text-sm mb-8 font-[family-name:var(--font-space-grotesk)]">
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          Automatización con IA
+      <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
+        {/* Radial gradient top-right */}
+        <div
+          className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at center, rgba(147,51,234,0.10) 0%, transparent 70%)",
+          }}
+        />
+        {/* Bottom gradient line */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-px"
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(147,51,234,0.5) 50%, transparent)",
+          }}
+        />
+
+        <div className="relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-primary text-sm mb-8 font-[family-name:var(--font-space-grotesk)]">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            Automatización con IA
+          </div>
+          <h1 className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-6xl font-bold text-white max-w-3xl leading-tight tracking-tighter">
+            <ScrambleText
+              text="Tu negocio pierde clientes"
+              duration={400}
+              className="block"
+            />
+            <ScrambleText
+              text="cada minuto."
+              duration={400}
+              delay={300}
+              className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container"
+              onComplete={() => setHeroReady(true)}
+            />
+          </h1>
+          <p className={`mt-6 text-lg text-on-surface-variant max-w-xl leading-relaxed transition-opacity duration-500 ${heroReady ? "opacity-100" : "opacity-0"}`}>
+            La mayoría de negocios responden mensajes con horas de retraso. Cada
+            mensaje sin respuesta es un cliente que se va con la competencia.
+            Nosotros lo resolvemos.
+          </p>
         </div>
-        <h1 className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-6xl font-bold text-white max-w-3xl leading-tight tracking-tighter">
-          Tu negocio pierde clientes
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">
-            cada minuto.
-          </span>
-        </h1>
-        <p className="mt-6 text-lg text-on-surface-variant max-w-xl leading-relaxed">
-          La mayoría de negocios responden mensajes con horas de retraso. Cada
-          mensaje sin respuesta es un cliente que se va con la competencia.
-          Nosotros lo resolvemos.
-        </p>
       </section>
 
       {/* The Problem */}

@@ -5,12 +5,13 @@ import { useLang } from "@/lib/lang-context";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/icon";
 import SiteLayout from "@/components/site-layout";
-import Image from "next/image";
+import { ScrambleText } from "@/components/scramble-text";
 
 export default function CasosPage() {
   const { t } = useLang();
   const c = t.casos;
   const [activeFilter, setActiveFilter] = useState(0);
+  const [heroReady, setHeroReady] = useState(false);
 
   const filters = [
     c.filters.all,
@@ -82,16 +83,35 @@ export default function CasosPage() {
     <SiteLayout>
       {/* Hero */}
       <section className="relative overflow-hidden px-8 py-20 lg:py-32 circuit-bg">
+        {/* Bottom gradient line */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-px"
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(147,51,234,0.5) 50%, transparent)",
+          }}
+        />
+
         <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-col items-start gap-4 page-enter" style={{ animationDelay: "0.1s" }}>
+          <div className="flex flex-col items-start gap-4">
             <span className="font-[family-name:var(--font-space-grotesk)] text-primary text-xs uppercase tracking-[0.2rem] border-l-2 border-primary pl-4">
               {c.badge}
             </span>
             <h1 className="font-[family-name:var(--font-space-grotesk)] text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none max-w-4xl">
-              {c.headlinePrefix}{" "}
-              <span className="text-outline/50">{c.headlineGradient}</span>
+              <ScrambleText
+                text={c.headlinePrefix}
+                duration={400}
+                className="block"
+                onComplete={() => {}}
+              />
+              <ScrambleText
+                text={c.headlineGradient}
+                duration={400}
+                delay={300}
+                className="block text-outline/50"
+                onComplete={() => setHeroReady(true)}
+              />
             </h1>
-            <p className="mt-8 text-on-surface-variant text-lg md:text-xl max-w-2xl font-light leading-relaxed">
+            <p className={`mt-8 text-on-surface-variant text-lg md:text-xl max-w-2xl font-light leading-relaxed transition-opacity duration-500 ${heroReady ? "opacity-100" : "opacity-0"}`}>
               {c.subtitle}
             </p>
           </div>
@@ -180,7 +200,7 @@ export default function CasosPage() {
 
       {/* CTA Section */}
       <section className="px-8 py-32 bg-surface-container-lowest border-t border-outline-variant/10">
-        <div className="max-w-[1440px] mx-auto text-center flex flex-col items-center gap-8 page-enter" style={{ animationDelay: "0.7s" }}>
+        <div className="max-w-[1440px] mx-auto text-center flex flex-col items-center gap-8">
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-6xl font-bold tracking-tighter">
             {c.cta.headlinePrefix}{" "}
             <br />
