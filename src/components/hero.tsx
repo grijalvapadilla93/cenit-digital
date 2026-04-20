@@ -2,33 +2,193 @@
 
 import { useLang } from "@/lib/lang-context";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+function scrambleText(
+  element: HTMLElement,
+  finalText: string,
+  duration: number,
+  onComplete?: () => void
+) {
+  let frame = 0;
+  const totalFrames = Math.round(duration / 16);
+
+  function tick() {
+    frame++;
+    const progress = frame / totalFrames;
+    const revealed = Math.floor(progress * finalText.length);
+
+    let result = "";
+    for (let i = 0; i < finalText.length; i++) {
+      if (i < revealed) {
+        result += finalText[i];
+      } else if (i === revealed) {
+        result += CHARS[Math.floor(Math.random() * CHARS.length)];
+      } else {
+        result += " ";
+      }
+    }
+    element.textContent = result;
+
+    if (frame < totalFrames) {
+      requestAnimationFrame(tick);
+    } else {
+      element.textContent = finalText;
+      onComplete?.();
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+function TypedText({ words, speed, delay }: { words: string[]; speed: number; delay: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const WRITE_SPEED = 85;
+    const DELETE_SPEED = 55;
+    const PAUSE = 1500;
+
+    function tick() {
+      const current = words[wordIndex];
+
+      if (!deleting) {
+        charIndex++;
+        if (ref.current) ref.current.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          timeout = setTimeout(() => { deleting = true; tick(); }, PAUSE);
+          return;
+        }
+        timeout = setTimeout(tick, WRITE_SPEED);
+      } else {
+        charIndex--;
+        if (ref.current) ref.current.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          timeout = setTimeout(tick, 400);
+          return;
+        }
+        timeout = setTimeout(tick, DELETE_SPEED);
+      }
+    }
+
+    timeout = setTimeout(tick, delay);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return <span ref={ref} />;
+}
 
 export function Hero() {
   const { t } = useLang();
+  const line1Ref = useRef<HTMLSpanElement>(null);
+  const line2Ref = useRef<HTMLSpanElement>(null);
+  const [scrambleDone, setScrambleDone] = useState(false);
+
+  const words = [
+    "una página web.",
+    "automatización.",
+    "un chatbot 24/7.",
+    "más reservas.",
+  ];
+
+  useEffect(() => {
+    if (!line1Ref.current || !line2Ref.current) return;
+
+    // Scramble line 1
+    scrambleText(line1Ref.current, "Más clientes.", 800, () => {
+      // Scramble line 2 after 600ms
+      setTimeout(() => {
+        if (line2Ref.current) {
+          scrambleText(line2Ref.current, "Menos trabajo.", 800, () => {
+            setScrambleDone(true);
+          });
+        }
+      }, 600);
+    });
+  }, []);
 
   return (
     <section className="relative min-h-[921px] flex items-center px-4 md:px-8 overflow-hidden circuit-bg">
-      <div className="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Radial gradient top-right */}
+      <div
+        className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at center, rgba(147,51,234,0.10) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Bottom gradient line */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-px"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(147,51,234,0.5) 50%, transparent)",
+        }}
+      />
+
+      <div className="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         {/* Left Content */}
         <div className="lg:col-span-7 space-y-8">
-          <div className="inline-block px-3 py-1 bg-surface-container-high rounded-full hero-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="inline-block px-3 py-1 bg-surface-container-high rounded-full">
             <span className="text-primary font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest">
               {t.hero.badge}
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-space-grotesk)] font-bold leading-tight tracking-tighter text-white hero-fade-up" style={{ animationDelay: "0.2s" }}>
-            {t.hero.headlinePrefix}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">
-              {t.hero.headlineGradient}
+          {/* Scramble title */}
+          <h1 className="font-[family-name:var(--font-space-grotesk)] font-bold leading-tight tracking-tighter text-white">
+            <span
+              ref={line1Ref}
+              className="block text-5xl md:text-7xl"
+            >
+              &nbsp;
+            </span>
+            <span
+              ref={line2Ref}
+              className="block text-5xl md:text-7xl mt-2"
+              style={{ color: "#9333ea" }}
+            >
+              &nbsp;
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed hero-fade-up" style={{ animationDelay: "0.3s" }}>
+          {/* Typed section */}
+          <div
+            className={`transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
+          >
+            <p className="text-2xl md:text-3xl font-[family-name:var(--font-space-grotesk)] font-medium text-on-surface-variant">
+              Tu negocio necesita{" "}
+              <span className="text-white">
+                <TypedText words={words} speed={85} delay={0} />
+              </span>
+              <span
+                className="typed-cursor"
+                style={{ color: "#9333ea", fontWeight: "bold" }}
+              >
+                |
+              </span>
+            </p>
+          </div>
+
+          {/* Subtitle */}
+          <p
+            className={`text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
+          >
             {t.hero.subtitle}
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4 hero-fade-up" style={{ animationDelay: "0.4s" }}>
+          {/* CTAs */}
+          <div
+            className={`flex flex-wrap gap-4 pt-4 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
+          >
             <Button className="bg-primary text-on-primary px-4 md:px-8 py-6 font-[family-name:var(--font-space-grotesk)] font-bold text-lg hover:shadow-[0_0_20px_rgba(209,188,255,0.4)] transition-all hover:bg-primary/90 btn-press btn-shimmer">
               {t.hero.ctaPrimary}
             </Button>
@@ -43,7 +203,9 @@ export function Hero() {
           </div>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap gap-6 pt-8 hero-fade-up" style={{ animationDelay: "0.5s" }}>
+          <div
+            className={`flex flex-wrap gap-6 pt-8 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
+          >
             {[
               "✓ Sitio web listo en 7 días",
               "✓ Automatización desde Q2,500",
@@ -61,7 +223,9 @@ export function Hero() {
         </div>
 
         {/* Right — Floating 3D Logo */}
-        <div className="lg:col-span-5 relative hidden lg:flex justify-center items-center hero-fade-up" style={{ animationDelay: "0.6s" }}>
+        <div
+          className={`lg:col-span-5 relative hidden lg:flex justify-center items-center transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
+        >
           <div className="absolute w-80 h-80 bg-primary/10 rounded-full blur-[120px]" />
           <div className="logo-float-3d">
             <img
@@ -73,15 +237,14 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Hero animations */}
+      {/* Cursor blink + logo float */}
       <style>{`
-        @keyframes heroFadeUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+        @keyframes cursorBlink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
         }
-        .hero-fade-up {
-          opacity: 0;
-          animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        .typed-cursor {
+          animation: cursorBlink 0.8s step-end infinite;
         }
 
         @keyframes logoFloat3D {
