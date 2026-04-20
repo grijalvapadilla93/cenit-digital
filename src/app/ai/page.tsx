@@ -1,5 +1,6 @@
 import SiteLayout from "@/components/site-layout";
 import { ChatDemo } from "@/components/chat-demo";
+import { NotificationPanel } from "@/components/notification-panel";
 
 export default function AIDemoPage() {
   return (
@@ -113,6 +114,21 @@ export default function AIDemoPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Live Notifications */}
+      <section className="px-6 py-20 max-w-3xl mx-auto">
+        <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4 text-center">
+          En tiempo real
+        </p>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+          Así se ve cuando el sistema trabaja por vos
+        </h2>
+        <p className="text-muted-foreground text-center mb-10 max-w-lg mx-auto">
+          Cada mensaje que llega es procesado al instante. Vos solo ves las
+          notificaciones importantes.
+        </p>
+        <NotificationPanel />
       </section>
 
       {/* Case Study */}
