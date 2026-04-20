@@ -323,17 +323,17 @@ export const translations = {
       ],
     },
     testimonials: {
-      headline: "Trabajamos con negocios reales en Guatemala",
+      headline: "Creamos proyectos que crecen con vos",
       subtitle:
-        "Tres negocios en Jalapa ya tienen presencia digital profesional. ¿Querés ser el siguiente?",
-      trusted: "Clientes actuales",
+        "Soporte vitalicio, sin contratos forzosos. Si tu negocio crece, el sistema crece con vos.",
+      trusted: "Nuestro compromiso",
       items: [
         {
-          company: "AL CARBÓN",
+          company: "CENIT DIGITAL",
           quote:
-            '"La demo que me entregaron convenció a todo el equipo antes de la primera reunión."',
-          name: "Francisco Quijada",
-          role: "Dueño de Al Carbón, Jalapa",
+            '"No desaparecemos después de entregar. Tu proyecto tiene soporte de por vida — actualizaciones, cambios y soporte cuando lo necesites."',
+          name: "Equipo Cenit",
+          role: "Agencia Digital · Guatemala",
         },
       ],
     },
