@@ -2,17 +2,13 @@
 
 import { useLang } from "@/lib/lang-context";
 import { Button } from "@/components/ui/button";
-import { HeroShader } from "@/components/hero-shader";
 
 export function Hero() {
   const { t } = useLang();
 
   return (
-    <section className="relative min-h-[921px] flex items-center px-4 md:px-8 overflow-hidden">
-      {/* GLSL Shader Background */}
-      <HeroShader />
-
-      <div className="relative z-10 max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="relative min-h-[921px] flex items-center px-4 md:px-8 overflow-hidden circuit-bg">
+      <div className="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Content */}
         <div className="lg:col-span-7 space-y-8">
           <div className="inline-block px-3 py-1 bg-surface-container-high rounded-full hero-fade-up" style={{ animationDelay: "0.1s" }}>
