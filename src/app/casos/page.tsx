@@ -34,6 +34,7 @@ export default function CasosPage() {
       gradient: "from-amber-900/60 via-orange-900/40 to-yellow-900/60",
       tag: "Portafolio",
       url: "https://alejandro-requena.vercel.app/",
+      video: "/casos/alejandro-requena/video.mp4",
       images: [
         "/casos/alejandro-requena/hero.jpeg",
         "/casos/alejandro-requena/hero.jpeg",
@@ -151,11 +152,22 @@ export default function CasosPage() {
             >
             <div className={`relative aspect-[16/10] overflow-hidden rounded-sm`}>
                 <div className="relative overflow-hidden rounded-sm h-full">
-                  <img
-                    src={project.images[0]}
-                    alt={`${project.title} preview`}
-                    className="w-full h-full object-cover transition-all duration-700"
-                  />
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={project.images[0]}
+                      alt={`${project.title} preview`}
+                      className="w-full h-full object-cover transition-all duration-700"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
                 </div>
                 <div className="absolute top-4 left-4 bg-primary px-3 py-1 text-on-primary font-[family-name:var(--font-space-grotesk)] text-[10px] uppercase font-bold tracking-tighter">
