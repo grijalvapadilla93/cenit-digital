@@ -55,10 +55,12 @@ export function ChatDemo() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
   }, [messages, isTyping]);
 
   const handleSend = () => {
@@ -93,7 +95,7 @@ export function ChatDemo() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+      <div ref={containerRef} className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
         {messages.map((m, i) => (
           <div
             key={i}
@@ -127,7 +129,6 @@ export function ChatDemo() {
             </div>
           </div>
         )}
-        <div ref={bottomRef} />
       </div>
 
       {/* Input */}
