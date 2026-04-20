@@ -47,7 +47,7 @@ export function Hero() {
             {[
               "✓ Sitio web listo en 7 días",
               "✓ Automatización desde Q2,500",
-              "✓ Soporte incluido 3 meses",
+              "✓ Soporte mientras lo necesites",
               "✓ Sin conocimientos técnicos",
             ].map((badge) => (
               <span
