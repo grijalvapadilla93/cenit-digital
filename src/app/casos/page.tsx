@@ -53,6 +53,7 @@ export default function CasosPage() {
       gradient: "from-red-900/60 via-rose-900/40 to-pink-900/60",
       tag: "Restaurante",
       url: "https://al-carbon.vercel.app/",
+      video: "/casos/al-carbon/video.mp4",
       images: [
         "/casos/al-carbon/hero.jpeg",
         "/casos/al-carbon/hero.jpeg",
@@ -71,6 +72,7 @@ export default function CasosPage() {
       gradient: "from-yellow-900/60 via-amber-900/40 to-orange-900/60",
       tag: "Restaurante & Ecuestre",
       url: "https://yeguada10.vercel.app/",
+      video: "/casos/yeguada10/video.mp4",
       images: [
         "/casos/yeguada10/hero.jpeg",
         "/casos/yeguada10/hero.jpeg",
