@@ -189,9 +189,11 @@ export function Hero() {
           <div
             className={`flex flex-wrap gap-4 pt-4 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
           >
-            <Button className="bg-primary text-on-primary px-4 md:px-8 py-6 font-[family-name:var(--font-space-grotesk)] font-bold text-lg hover:shadow-[0_0_20px_rgba(209,188,255,0.4)] transition-all hover:bg-primary/90 btn-press btn-shimmer">
-              {t.hero.ctaPrimary}
-            </Button>
+            <a href="/casos">
+              <Button className="bg-primary text-on-primary px-4 md:px-8 py-6 font-[family-name:var(--font-space-grotesk)] font-bold text-lg hover:shadow-[0_0_20px_rgba(209,188,255,0.4)] transition-all hover:bg-primary/90 btn-press btn-shimmer">
+                {t.hero.ctaPrimary}
+              </Button>
+            </a>
             <a href="/casos">
               <Button
                 variant="outline"
