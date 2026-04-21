@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLang } from "@/lib/lang-context";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/icon";
@@ -11,6 +11,11 @@ export default function CasosPage() {
   const { t } = useLang();
   const c = t.casos;
   const [heroReady, setHeroReady] = useState(false);
+
+  // Scroll to top on mount (refresh / direct navigation)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Real portfolio projects
   const portfolioProjects = [
@@ -210,16 +215,16 @@ export default function CasosPage() {
           <p className="text-on-surface-variant text-lg max-w-xl font-light">
             {c.cta.subtitle}
           </p>
-          <div className="flex gap-6 mt-4">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-4">
             <a href="/#contact">
-              <Button className="bg-primary text-on-primary px-10 py-6 font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-[0.2rem] font-bold hover:bg-primary/90 btn-press btn-shimmer">
+              <Button className="bg-primary text-on-primary px-6 sm:px-10 py-6 font-[family-name:var(--font-space-grotesk)] text-xs sm:text-sm uppercase tracking-[0.1rem] sm:tracking-[0.2rem] font-bold hover:bg-primary/90 btn-press btn-shimmer">
                 {c.cta.primary}
               </Button>
             </a>
             <a href="/">
               <Button
                 variant="outline"
-                className="border border-outline px-10 py-6 font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-[0.2rem] font-bold text-white hover:bg-surface-container-high btn-press"
+                className="border border-outline px-6 sm:px-10 py-6 font-[family-name:var(--font-space-grotesk)] text-xs sm:text-sm uppercase tracking-[0.1rem] sm:tracking-[0.2rem] font-bold text-white hover:bg-surface-container-high btn-press"
               >
                 {c.cta.secondary}
               </Button>
