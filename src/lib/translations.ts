@@ -10,20 +10,15 @@ export const translations = {
     },
     // Hero
     hero: {
-      badge: "Bespoke Digital Engineering",
-      headlinePrefix: "Digital Solutions",
-      headlineGradient: "that Power",
-      headlineSuffix: "Your Business",
+      badge: "DIGITAL AGENCY · GUATEMALA",
+      headlinePrefix: "More clients.",
+      headlineGradient: "Less manual work.",
+      headlineSuffix: "",
       subtitle:
-        "We automate, build, and optimize your company's technology so you can focus on what matters: growing your business.",
-      ctaPrimary: "Request Custom Build",
-      ctaSecondary: "View Case Studies",
-      cards: {
-        customLogic: "Custom Logic",
-        uniqueFlows: "Unique Flows",
-        nicheInsights: "Niche Insights",
-        privateTech: "Private Tech",
-      },
+        "We build websites and AI systems for businesses that want to grow without hiring more people.",
+      ctaPrimary: "See our work",
+      ctaSecondary: "Book a free call",
+      cards: {},
     },
     // Services
     services: {
