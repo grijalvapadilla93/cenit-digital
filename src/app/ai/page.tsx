@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SiteLayout from "@/components/site-layout";
 import { ChatDemo } from "@/components/chat-demo";
 import { NotificationPanel } from "@/components/notification-panel";
@@ -8,6 +8,10 @@ import { ScrambleText } from "@/components/scramble-text";
 
 export default function AIDemoPage() {
   const [heroReady, setHeroReady] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <SiteLayout>
