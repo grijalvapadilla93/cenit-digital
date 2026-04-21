@@ -4,6 +4,7 @@ export const translations = {
   en: {
     // Navbar
     nav: {
+      home: "Home",
       caseStudies: "Case Studies",
       consultation: "Consultation",
     },
@@ -240,6 +241,7 @@ export const translations = {
 
   es: {
     nav: {
+      home: "Inicio",
       caseStudies: "Casos de Estudio",
       consultation: "Consultoría",
     },

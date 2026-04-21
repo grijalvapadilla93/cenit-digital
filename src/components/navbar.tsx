@@ -58,7 +58,7 @@ export function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-none p-2 -mr-2"
+            className="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-none p-2"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
@@ -88,13 +88,25 @@ export function Navbar() {
         }`}
       >
         <a
-          href="/casos"
+          href="/"
           onClick={() => setOpen(false)}
           className="text-2xl font-bold text-white hover:text-purple-400 transition-colors font-[family-name:var(--font-space-grotesk)]"
           style={{
             transform: open ? "translateY(0)" : "translateY(20px)",
             opacity: open ? 1 : 0,
             transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0ms",
+          }}
+        >
+          {t.nav.home || "Inicio"}
+        </a>
+        <a
+          href="/casos"
+          onClick={() => setOpen(false)}
+          className="text-2xl font-bold text-white hover:text-purple-400 transition-colors font-[family-name:var(--font-space-grotesk)]"
+          style={{
+            transform: open ? "translateY(0)" : "translateY(20px)",
+            opacity: open ? 1 : 0,
+            transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1) 100ms",
           }}
         >
           {t.nav.caseStudies}
