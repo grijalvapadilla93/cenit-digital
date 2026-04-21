@@ -1,20 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SiteLayout from "@/components/site-layout";
 import { ChatDemo } from "@/components/chat-demo";
 import { NotificationPanel } from "@/components/notification-panel";
 import { ScrambleText } from "@/components/scramble-text";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function AIDemoPage() {
   const [heroReady, setHeroReady] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SiteLayout>
+      <ScrollToTop />
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden">
         {/* Radial gradient top-right */}
