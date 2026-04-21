@@ -10,16 +10,7 @@ import { ScrambleText } from "@/components/scramble-text";
 export default function CasosPage() {
   const { t } = useLang();
   const c = t.casos;
-  const [activeFilter, setActiveFilter] = useState(0);
   const [heroReady, setHeroReady] = useState(false);
-
-  const filters = [
-    c.filters.all,
-    c.filters.web,
-    c.filters.automation,
-    c.filters.dashboards,
-    c.filters.ai,
-  ];
 
   // Real portfolio projects
   const portfolioProjects = [
@@ -125,19 +116,15 @@ export default function CasosPage() {
       {/* Filter Bar */}
       <section className="bg-surface border-y border-outline-variant/15">
         <div className="max-w-[1440px] mx-auto px-8 py-6 flex flex-wrap items-center gap-4">
-          {filters.map((label, i) => (
-            <button
-              key={label}
-              onClick={() => setActiveFilter(i)}
-              className={`px-6 py-2 font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest transition-all btn-press ${
-                activeFilter === i
-                  ? "bg-primary text-on-primary"
-                  : "bg-surface-container-high text-on-surface-variant hover:text-primary"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
+          <span className="px-6 py-2 font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest bg-primary text-on-primary">
+            {c.filters.web}
+          </span>
+          <a
+            href="/ai"
+            className="px-6 py-2 font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest bg-surface-container-high text-on-surface-variant hover:text-primary transition-all btn-press"
+          >
+            {c.filters.ai}
+          </a>
         </div>
       </section>
 
