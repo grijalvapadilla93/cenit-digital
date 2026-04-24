@@ -12,7 +12,7 @@ export const translations = {
     hero: {
       badge: "DIGITAL AGENCY · GUATEMALA",
       headlinePrefix: "Your business is losing",
-      headlineGradient: "clients every day.",
+      headlineGradient: "clients and time every day.",
       subtitle:
         "While you sleep, your competitors respond faster. We build websites and AI systems that work 24/7 so you stop losing money to manual processes.",
       ctaPrimary: "Get a free diagnostic →",
@@ -285,7 +285,7 @@ export const translations = {
     hero: {
       badge: "AGENCIA DIGITAL · GUATEMALA",
       headlinePrefix: "Tu negocio está perdiendo",
-      headlineGradient: "clientes todos los días.",
+      headlineGradient: "clientes y tiempo todos los días.",
       subtitle:
         "Mientras dormís, tu competencia responde más rápido. Construimos páginas web y sistemas con IA que trabajan 24/7 para que dejés de perder plata con procesos manuales.",
       ctaPrimary: "Diagnóstico gratis →",
