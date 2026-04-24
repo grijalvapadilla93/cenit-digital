@@ -16,9 +16,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cenit-digital.vercel.app"),
   title: "Cenit Digital — Soluciones que elevan tu negocio",
   description:
     "Automatizamos, construimos y optimizamos la tecnología de tu empresa para que te enfoques en hacer crecer tu negocio.",
+  openGraph: {
+    title: "Cenit Digital — Websites & AI for Guatemalan Businesses",
+    description: "We build websites, chatbots, and automation systems that work 24/7. From Q2,500. Ready in 7-14 days.",
+    type: "website",
+    locale: "es_GT",
+  },
 };
 
 export default function RootLayout({

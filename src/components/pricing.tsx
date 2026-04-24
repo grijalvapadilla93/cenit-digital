@@ -39,7 +39,7 @@ export function Pricing() {
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-[family-name:var(--font-space-grotesk)] uppercase tracking-widest px-4 py-1 rounded-full font-bold">
-                    Más popular
+                    {p.popularLabel}
                   </div>
                 )}
                 <div className="mb-6">

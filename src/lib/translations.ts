@@ -9,6 +9,11 @@ export const translations = {
       pricing: "Pricing",
       consultation: "Free Call",
     },
+    meta: {
+      title: "Cenit Digital — Websites & AI for Guatemalan Businesses",
+      description:
+        "We build websites, chatbots, and automation systems that work 24/7. From Q2,500. Ready in 7-14 days.",
+    },
     hero: {
       badge: "DIGITAL AGENCY · GUATEMALA",
       headlinePrefix: "Your business is losing",
@@ -132,6 +137,7 @@ export const translations = {
       badge: "PRICING",
       title: "Transparent prices. No hidden fees.",
       subtitle: "Everything includes hosting, domain, and 3 months of support.",
+      popularLabel: "Most popular",
       tiers: [
         {
           name: "Starter",
@@ -289,6 +295,11 @@ export const translations = {
       pricing: "Precios",
       consultation: "Llamada gratis",
     },
+    meta: {
+      title: "Cenit Digital — Páginas web e IA para negocios guatemaltecos",
+      description:
+        "Construimos páginas web, chatbots y sistemas de automatización que trabajan 24/7. Desde Q2,500. Listos en 7-14 días.",
+    },
     hero: {
       badge: "AGENCIA DIGITAL · GUATEMALA",
       headlinePrefix: "Tu negocio está perdiendo",
@@ -412,6 +423,7 @@ export const translations = {
       badge: "PRECIOS",
       title: "Precios transparentes. Sin letra chica.",
       subtitle: "Todo incluye hosting, dominio y 3 meses de soporte.",
+      popularLabel: "Más popular",
       tiers: [
         {
           name: "Starter",
