@@ -27,19 +27,16 @@ export const translations = {
       title: "This is what a business without automation looks like",
       cards: [
         {
-          icon: "📱",
           stat: "30+",
           label: "Daily unanswered messages",
           desc: "WhatsApp, Instagram, Facebook — all asking for a response and the owner can't keep up.",
         },
         {
-          icon: "⏰",
           stat: "1-3h",
           label: "Average response delay",
           desc: "By the time you reply, the customer already chose your competitor.",
         },
         {
-          icon: "💸",
           stat: "40%",
           label: "Leads lost",
           desc: "Almost half of reservations and orders are lost due to lack of response.",
@@ -70,6 +67,20 @@ export const translations = {
           description:
             "Orders, inventory, follow-ups, reminders — all on autopilot. You focus on growing; the system handles the repetitive work.",
           features: ["Auto-replies and follow-ups", "Connected to your existing tools", "Monthly performance reports"],
+        },
+        dashboards: {
+          tag: "DASHBOARDS",
+          title: "See your numbers without opening 5 apps",
+          description:
+            "Sales, reservations, new leads — all in one clean screen on your phone. Stop guessing and start deciding with real data.",
+          features: ["Real-time metrics", "Mobile-friendly view", "Automatic daily/weekly summaries"],
+        },
+        custom: {
+          tag: "CUSTOM",
+          title: "Need something that doesn't exist yet?",
+          description:
+            "Custom apps, internal tools, integrations, or anything weird your business needs. If it involves code, we can build it.",
+          features: ["Built specifically for your workflow", "Integrates with your existing stack", "Scales as you grow"],
         },
       },
     },
@@ -106,6 +117,7 @@ export const translations = {
         websites: "Websites",
         chatbots: "Chatbots & AI",
         automations: "Automations",
+        dashboards: "Dashboards",
       },
       cta: "Want something like this? →",
     },
@@ -178,19 +190,19 @@ export const translations = {
           company: "AL CARBÓN",
           quote: "\"Before, we lost reservations daily because nobody answered the phone. Now the chatbot handles it 24/7 and we just check the calendar in the morning.\"",
           name: "Owner",
-          role: "Restaurant · Jalapa",
+          role: "Restaurant · Guatemala",
         },
         {
           company: "YEGUADA 10",
           quote: "\"Our website went from 'we should have one' to 'we get bookings through it every week.' The investment paid for itself in a month.\"",
           name: "Management",
-          role: "Restaurant & Equestrian · Jalapa",
+          role: "Restaurant & Equestrian · Guatemala",
         },
         {
           company: "ARTE REQUENA",
           quote: "\"Students find the academy through Google now. Before, we relied entirely on word of mouth.\"",
           name: "Alejandro Requena",
-          role: "Artist & Academy · Jalapa",
+          role: "Artist & Academy · Guatemala",
         },
       ],
     },
@@ -219,7 +231,7 @@ export const translations = {
             "Not at all. Everything is designed for you to manage from your phone. If you can use WhatsApp, you can use any system we build.",
         },
         {
-          question: "Do you work outside Jalapa?",
+          question: "Do you work with businesses outside the capital?",
           answer:
             "Yes. We work 100% remote with businesses anywhere in Guatemala. The diagnostic call is via video, and the process is just as fast regardless of location.",
         },
@@ -288,19 +300,16 @@ export const translations = {
       title: "Así se ve un negocio sin automatización",
       cards: [
         {
-          icon: "📱",
           stat: "30+",
           label: "Mensajes sin responder al día",
           desc: "WhatsApp, Instagram, Facebook — todos piden respuesta y el dueño no da abasto.",
         },
         {
-          icon: "⏰",
           stat: "1-3h",
           label: "Demora promedio de respuesta",
           desc: "Para cuando contestás, el cliente ya eligió a tu competencia.",
         },
         {
-          icon: "💸",
           stat: "40%",
           label: "Leads perdidos",
           desc: "Casi la mitad de reservaciones y pedidos se pierden por falta de respuesta.",
@@ -309,7 +318,7 @@ export const translations = {
     },
     services: {
       badge: "QUÉ HACEMOS",
-      title: "Tres formas de hacer que tu negocio gane más",
+      title: "Formas de hacer que tu negocio gane más",
       items: {
         web: {
           tag: "PÁGINAS WEB",
@@ -331,6 +340,20 @@ export const translations = {
           description:
             "Pedidos, inventario, seguimientos, recordatorios — todo en automático. Vos te enfocás en crecer; el sistema se encarga de lo repetitivo.",
           features: ["Respuestas y seguimientos automáticos", "Conectado con tus herramientas actuales", "Reportes mensuales de rendimiento"],
+        },
+        dashboards: {
+          tag: "DASHBOARDS",
+          title: "Tus números sin abrir 5 apps",
+          description:
+            "Ventas, reservas, clientes nuevos — todo en una pantalla limpia desde tu celular. Dejá de adivinar y empezá a decidir con datos reales.",
+          features: ["Métricas en tiempo real", "Vista optimizada para celular", "Resúmenes diarios/semanales automáticos"],
+        },
+        custom: {
+          tag: "A MEDIDA",
+          title: "¿Necesitás algo que no existe todavía?",
+          description:
+            "Apps personalizadas, herramientas internas, integraciones o cualquier cosa rara que tu negocio necesite. Si involucra código, lo construimos.",
+          features: ["Diseñado específicamente para tu flujo", "Se integra con lo que ya usás", "Escala a medida que crecés"],
         },
       },
     },
@@ -367,6 +390,7 @@ export const translations = {
         websites: "Páginas Web",
         chatbots: "Chatbots e IA",
         automations: "Automatizaciones",
+        dashboards: "Dashboards",
       },
       cta: "¿Querés algo así? →",
     },
@@ -439,19 +463,19 @@ export const translations = {
           company: "AL CARBÓN",
           quote: "\"Antes perdíamos reservaciones todos los días porque nadie contestaba el teléfono. Ahora el chatbot las maneja 24/7 y solo revisamos el calendario en la mañana.\"",
           name: "Dueño",
-          role: "Restaurante · Jalapa",
+          role: "Restaurante · Guatemala",
         },
         {
           company: "YEGUADA 10",
           quote: "\"Nuestra web pasó de 'deberíamos tener una' a 'recibimos reservas por ahí todas las semanas'. La inversión se pagó sola en un mes.\"",
           name: "Administración",
-          role: "Restaurante & Ecuestre · Jalapa",
+          role: "Restaurante & Ecuestre · Guatemala",
         },
         {
           company: "ARTE REQUENA",
           quote: "\"Los estudiantes encuentran la academia por Google ahora. Antes dependíamos 100% del boca a boca.\"",
           name: "Alejandro Requena",
-          role: "Artista & Academia · Jalapa",
+          role: "Artista & Academia · Guatemala",
         },
       ],
     },
@@ -480,7 +504,7 @@ export const translations = {
             "Para nada. Todo está diseñado para que lo manejés desde tu celular. Si sabés usar WhatsApp, podés usar cualquier sistema que construyamos.",
         },
         {
-          question: "¿Trabajan fuera de Jalapa?",
+          question: "¿Trabajan con negocios en otras ciudades?",
           answer:
             "Sí. Trabajamos 100% remoto con negocios en toda Guatemala. La llamada de diagnóstico es por videollamada y el proceso es igual de ágil sin importar dónde estés.",
         },

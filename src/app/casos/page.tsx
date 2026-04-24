@@ -8,7 +8,7 @@ import { ScrambleText } from "@/components/scramble-text";
 
 const WHATSAPP_LINK = "https://wa.me/50200000000?text=Hola%20Cenit%20Digital,%20quiero%20algo%20así";
 
-type TabKey = "websites" | "chatbots" | "automations";
+type TabKey = "websites" | "chatbots" | "automations" | "dashboards";
 
 const portfolioProjects: Record<TabKey, Array<{
   id: number;
@@ -17,9 +17,7 @@ const portfolioProjects: Record<TabKey, Array<{
   category: string;
   description: string;
   result: string;
-  gradient: string;
   url: string;
-  video?: string;
   image: string;
 }>> = {
   websites: [
@@ -27,36 +25,30 @@ const portfolioProjects: Record<TabKey, Array<{
       id: 1,
       title: "Al Carbón",
       subtitle: "Restaurante Premium",
-      category: "Restaurante · Jalapa · Guatemala",
+      category: "Restaurante · Guatemala",
       description: "Sitio web diseñado para convertir visitantes en reservaciones. Menú digital interactivo, sistema de reservas integrado y botón de WhatsApp visible en todo momento.",
       result: "Reservaciones directas desde la web",
-      gradient: "from-red-900/60 via-rose-900/40 to-pink-900/60",
       url: "https://al-carbon.vercel.app/",
-      video: "/casos/al-carbon/video.mp4",
       image: "/casos/al-carbon/hero.jpeg",
     },
     {
       id: 2,
       title: "Yeguada 10",
       subtitle: "Restaurante & Academia Ecuestre",
-      category: "Restaurante & Ecuestre · Jalapa · Guatemala",
+      category: "Restaurante & Ecuestre · Guatemala",
       description: "Web completa para complejo que incluye restaurante, bar y academia ecuestre. Galería de eventos, caballos, academia y sistema de contacto directo.",
       result: "Reservas semanales desde el sitio",
-      gradient: "from-yellow-900/60 via-amber-900/40 to-orange-900/60",
       url: "https://yeguada10.vercel.app/",
-      video: "/casos/yeguada10/video.mp4",
       image: "/casos/yeguada10/hero.jpeg",
     },
     {
       id: 3,
       title: "Alejandro Requena",
       subtitle: "Portfolio Artístico & Academia",
-      category: "Arte & Educación · Jalapa · Guatemala",
+      category: "Arte & Educación · Guatemala",
       description: "Portfolio profesional para artista visual. Galería de obras, información de la academia Art Requena, testimonios y contacto directo. Diseño elegante con parallax.",
       result: "Estudiantes nuevos desde Google",
-      gradient: "from-amber-900/60 via-orange-900/40 to-yellow-900/60",
       url: "https://alejandro-requena.vercel.app/",
-      video: "/casos/alejandro-requena/video.mp4",
       image: "/casos/alejandro-requena/hero.jpeg",
     },
   ],
@@ -68,7 +60,6 @@ const portfolioProjects: Record<TabKey, Array<{
       category: "IA · Chatbot · Guatemala",
       description: "Chatbot que responde WhatsApp e Instagram al instante. Agenda citas, responde preguntas sobre el menú, horarios y precios. Nunca más un mensaje sin respuesta.",
       result: "Respuesta instantánea 24/7",
-      gradient: "from-green-900/60 via-emerald-900/40 to-teal-900/60",
       url: "/ai",
       image: "/casos/al-carbon/hero.jpeg",
     },
@@ -79,7 +70,6 @@ const portfolioProjects: Record<TabKey, Array<{
       category: "IA · Salud · Guatemala",
       description: "Sistema de IA que agenda citas, responde preguntas frecuentes y deriva emergencias. Integración directa con calendario del negocio. El dueño solo revisa confirmaciones.",
       result: "85% de llamadas automatizadas",
-      gradient: "from-blue-900/60 via-cyan-900/40 to-sky-900/60",
       url: "/ai",
       image: "/casos/yeguada10/hero.jpeg",
     },
@@ -92,7 +82,6 @@ const portfolioProjects: Record<TabKey, Array<{
       category: "Automatización · Restaurante · Guatemala",
       description: "Pedidos de WhatsApp se convierten automáticamente en órdenes para cocina. Notificaciones al cliente, seguimiento de estado y resumen diario para el dueño. Todo sin intervención manual.",
       result: "-40% en errores de pedido",
-      gradient: "from-purple-900/60 via-violet-900/40 to-fuchsia-900/60",
       url: "/ai",
       image: "/casos/al-carbon/hero.jpeg",
     },
@@ -103,9 +92,30 @@ const portfolioProjects: Record<TabKey, Array<{
       category: "Automatización · Ventas · Guatemala",
       description: "Cada lead que contacta por cualquier canal entra automáticamente al sistema. Recibe seguimiento por WhatsApp, recordatorios y notificaciones al vendedor solo cuando el lead está calificado.",
       result: "0 leads perdidos por falta de seguimiento",
-      gradient: "from-indigo-900/60 via-blue-900/40 to-purple-900/60",
       url: "/ai",
       image: "/casos/alejandro-requena/hero.jpeg",
+    },
+  ],
+  dashboards: [
+    {
+      id: 8,
+      title: "Panel de Ventas",
+      subtitle: "Dashboard de rendimiento",
+      category: "Dashboard · Retail · Guatemala",
+      description: "Panel en tiempo real que muestra ventas del día, semana y mes. Comparativas, productos más vendidos, horarios pico y tendencias. El dueño ve todo desde su celular en 30 segundos.",
+      result: "Decisiones basadas en datos, no en intuición",
+      url: WHATSAPP_LINK,
+      image: "/casos/al-carbon/hero.jpeg",
+    },
+    {
+      id: 9,
+      title: "Panel de Reservas",
+      subtitle: "Agenda y ocupación",
+      category: "Dashboard · Restaurante · Guatemala",
+      description: "Visualización de mesas ocupadas, reservas del día, cancelaciones y no-shows. Predicción de ocupación para la semana. El dueño sabe cuánto personal necesita antes de abrir.",
+      result: "Optimización de personal y recursos",
+      url: WHATSAPP_LINK,
+      image: "/casos/yeguada10/hero.jpeg",
     },
   ],
 };
@@ -121,6 +131,7 @@ export default function CasosPage() {
     { key: "websites", label: p.tabs.websites },
     { key: "chatbots", label: p.tabs.chatbots },
     { key: "automations", label: p.tabs.automations },
+    { key: "dashboards", label: p.tabs.dashboards },
   ];
 
   return (
@@ -185,22 +196,11 @@ export default function CasosPage() {
             >
               <div className={`relative aspect-[16/10] overflow-hidden rounded-sm`}>
                 <div className="relative overflow-hidden rounded-sm h-full">
-                  {project.video ? (
-                    <video
-                      src={project.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <img
-                      src={project.image}
-                      alt={`${project.title} preview`}
-                      className="w-full h-full object-cover transition-all duration-700"
-                    />
-                  )}
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
                 </div>
                 <div className="absolute top-4 left-4 bg-primary px-3 py-1 text-on-primary font-[family-name:var(--font-space-grotesk)] text-[10px] uppercase font-bold tracking-tighter">

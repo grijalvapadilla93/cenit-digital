@@ -19,11 +19,11 @@ const PRESET_RESPONSES: Record<string, string> = {
   reservacion:
     "¡Con gusto! Para confirmar tu reservación necesito: 1) Fecha, 2) Hora, 3) Número de personas. ¿Para cuándo sería?",
   ubicacion:
-    "Estamos en la 5ta Avenida 3-28, Zona 1, Jalapa. A una cuadra del parque central. ¿Necesitas indicaciones?",
+    "Estamos en Zona 1, Ciudad de Guatemala. A una cuadra del parque central. ¿Necesitas indicaciones?",
   direccion:
-    "Estamos en la 5ta Avenida 3-28, Zona 1, Jalapa. A una cuadra del parque central. ¿Necesitas indicaciones?",
+    "Estamos en Zona 1, Ciudad de Guatemala. A una cuadra del parque central. ¿Necesitas indicaciones?",
   donde:
-    "Estamos en la 5ta Avenida 3-28, Zona 1, Jalapa. A una cuadra del parque central. ¿Necesitas indicaciones?",
+    "Estamos en Zona 1, Ciudad de Guatemala. A una cuadra del parque central. ¿Necesitas indicaciones?",
   precio:
     "Nuestros cortes van desde Q85 hasta Q195. Las pastas desde Q65. Postres desde Q35. ¿Te interesa algún platillo en especial?",
   precios:
@@ -33,9 +33,9 @@ const PRESET_RESPONSES: Record<string, string> = {
   eventos:
     "¡Sí! Hacemos eventos privados para hasta 40 personas. Tenemos paquetes con menú cerrado. ¿Qué tipo de evento tienes en mente?",
   delivery:
-    "Hacemos delivery dentro de Jalapa. El tiempo promedio es de 30-45 minutos. ¿Qué te gustaría ordenar?",
+    "Hacemos delivery en Ciudad de Guatemala. El tiempo promedio es de 30-45 minutos. ¿Qué te gustaría ordenar?",
   pedido:
-    "Hacemos delivery dentro de Jalapa. El tiempo promedio es de 30-45 minutos. ¿Qué te gustaría ordenar?",
+    "Hacemos delivery en Ciudad de Guatemala. El tiempo promedio es de 30-45 minutos. ¿Qué te gustaría ordenar?",
 };
 
 function getResponse(input: string): string {

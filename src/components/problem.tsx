@@ -1,11 +1,14 @@
 "use client";
 
 import { useLang } from "@/lib/lang-context";
+import { Icon } from "@/components/icon";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export function Problem() {
   const { t } = useLang();
   const p = t.problem;
+
+  const icons = ["chat", "schedule", "trending_down"];
 
   return (
     <section className="py-24 px-4 md:px-8 bg-surface-container-lowest">
@@ -25,7 +28,9 @@ export function Problem() {
           {p.cards.map((card, i) => (
             <ScrollReveal key={i} stagger={(i + 1) as 1 | 2 | 3}>
               <div className="bg-surface-container-low p-8 rounded-lg border border-outline-variant/10 card-lift cursor-default text-center">
-                <div className="text-5xl mb-4">{card.icon}</div>
+                <div className="mb-6">
+                  <Icon name={icons[i]} className="text-5xl text-primary icon-pulse mx-auto" />
+                </div>
                 <div className="text-5xl font-[family-name:var(--font-space-grotesk)] font-bold text-primary mb-2">
                   {card.stat}
                 </div>
