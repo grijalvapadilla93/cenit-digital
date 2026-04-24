@@ -75,6 +75,13 @@ export const translations = {
             "Sales, reservations, new leads — all in one clean screen on your phone. Stop guessing and start deciding with real data.",
           features: ["Real-time metrics", "Mobile-friendly view", "Automatic daily/weekly summaries"],
         },
+        agents: {
+          tag: "DIGITAL WORKERS",
+          title: "Hire an employee that never sleeps",
+          description:
+            "An AI agent trained specifically for your business. Answers WhatsApp, updates spreadsheets, sends reports, qualifies leads and executes complex tasks — all automatic and customized for you.",
+          features: ["Works 24/7 without breaks", "Trained on your business data", "Does the work of 2-3 people"],
+        },
         custom: {
           tag: "CUSTOM",
           title: "Need something that doesn't exist yet?",
@@ -347,6 +354,13 @@ export const translations = {
           description:
             "Ventas, reservas, clientes nuevos — todo en una pantalla limpia desde tu celular. Dejá de adivinar y empezá a decidir con datos reales.",
           features: ["Métricas en tiempo real", "Vista optimizada para celular", "Resúmenes diarios/semanales automáticos"],
+        },
+        agents: {
+          tag: "EMPLEADOS DIGITALES",
+          title: "Contratá a un empleado que no duerme",
+          description:
+            "Un agente de IA entrenado específicamente para tu negocio. Responde WhatsApp, actualiza hojas de cálculo, envía reportes, clasifica leads y ejecuta tareas complejas — todo automático y personalizado para vos.",
+          features: ["Trabaja 24/7 sin descanso", "Se entrena con tu información", "Hace el trabajo de 2-3 personas"],
         },
         custom: {
           tag: "A MEDIDA",

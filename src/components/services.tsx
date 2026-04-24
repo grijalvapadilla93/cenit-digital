@@ -16,6 +16,7 @@ export function Services() {
     { key: "ai" as const, icon: "smart_toy" },
     { key: "automation" as const, icon: "settings_suggest" },
     { key: "dashboards" as const, icon: "dashboard" },
+    { key: "agents" as const, icon: "robot" },
     { key: "custom" as const, icon: "code_blocks" },
   ];
 
@@ -37,7 +38,7 @@ export function Services() {
           {services.map((svc, i) => {
             const item = s.items[svc.key];
             return (
-              <ScrollReveal key={svc.key} stagger={(i + 1) as 1 | 2 | 3 | 4 | 5}>
+              <ScrollReveal key={svc.key} stagger={(i + 1) as 1 | 2 | 3 | 4 | 5 | 6}>
                 <div className="bg-surface-container-low p-8 rounded-lg border border-outline-variant/10 card-lift cursor-default h-full flex flex-col">
                   <div className="flex justify-between items-start mb-8">
                     <Icon name={svc.icon} className="text-4xl text-primary icon-pulse" />

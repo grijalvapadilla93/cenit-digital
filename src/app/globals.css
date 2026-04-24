@@ -188,6 +188,7 @@ input, textarea {
 .scroll-reveal.revealed.stagger-3 { animation-delay: 0.3s; }
 .scroll-reveal.revealed.stagger-4 { animation-delay: 0.4s; }
 .scroll-reveal.revealed.stagger-5 { animation-delay: 0.5s; }
+.scroll-reveal.revealed.stagger-6 { animation-delay: 0.6s; }
 
 /* Card hover lift */
 .card-lift {
