@@ -1,107 +1,143 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLang } from "@/lib/lang-context";
 import { Button } from "@/components/ui/button";
-import { Icon } from "@/components/icon";
 import SiteLayout from "@/components/site-layout";
 import { ScrambleText } from "@/components/scramble-text";
 
-export default function CasosPage() {
-  const { t } = useLang();
-  const c = t.casos;
-  const [heroReady, setHeroReady] = useState(false);
+const WHATSAPP_LINK = "https://wa.me/50200000000?text=Hola%20Cenit%20Digital,%20quiero%20algo%20así";
 
-  // Scroll to top on mount (refresh / direct navigation)
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+type TabKey = "websites" | "chatbots" | "automations";
 
-  // Real portfolio projects
-  const portfolioProjects = [
+const portfolioProjects: Record<TabKey, Array<{
+  id: number;
+  title: string;
+  subtitle: string;
+  category: string;
+  description: string;
+  result: string;
+  gradient: string;
+  url: string;
+  video?: string;
+  image: string;
+}>> = {
+  websites: [
     {
       id: 1,
-      title: "Alejandro Requena",
-      subtitle: "Portfolio Artístico",
-      category: "Web · Portafolio · Guatemala",
-      description: "Portfolio profesional para artista visual de Jalapa. Incluye galería de obras, información sobre la academia Art Requena, testimonios y contacto. Diseño elegante con efectos de parallax y animaciones sutiles.",
-      metric: "Sitio completo",
-      progress: 100,
-      gradient: "from-amber-900/60 via-orange-900/40 to-yellow-900/60",
-      tag: "Portafolio",
-      url: "https://alejandro-requena.vercel.app/",
-      video: "/casos/alejandro-requena/video.mp4",
-      images: [
-        "/casos/alejandro-requena/hero.jpeg",
-        "/casos/alejandro-requena/hero.jpeg",
-        "/casos/alejandro-requena/hero.jpeg",
-        "/casos/alejandro-requena/hero.jpeg"
-      ]
+      title: "Al Carbón",
+      subtitle: "Restaurante Premium",
+      category: "Restaurante · Jalapa · Guatemala",
+      description: "Sitio web diseñado para convertir visitantes en reservaciones. Menú digital interactivo, sistema de reservas integrado y botón de WhatsApp visible en todo momento.",
+      result: "Reservaciones directas desde la web",
+      gradient: "from-red-900/60 via-rose-900/40 to-pink-900/60",
+      url: "https://al-carbon.vercel.app/",
+      video: "/casos/al-carbon/video.mp4",
+      image: "/casos/al-carbon/hero.jpeg",
     },
     {
       id: 2,
-      title: "Al Carbón",
-      subtitle: "Restaurante Premium",
-      category: "Web · Restaurante · Guatemala",
-      description: "Sitio web para restaurante de cortes premium. Incluye menú digital interactivo, sistema de reservaciones, galería de fotos, eventos especiales y botón de WhatsApp para pedidos. Diseño oscuro y elegante.",
-      metric: "Menú + Reservas",
-      progress: 100,
-      gradient: "from-red-900/60 via-rose-900/40 to-pink-900/60",
-      tag: "Restaurante",
-      url: "https://al-carbon.vercel.app/",
-      video: "/casos/al-carbon/video.mp4",
-      images: [
-        "/casos/al-carbon/hero.jpeg",
-        "/casos/al-carbon/hero.jpeg",
-        "/casos/al-carbon/hero.jpeg",
-        "/casos/al-carbon/hero.jpeg"
-      ]
+      title: "Yeguada 10",
+      subtitle: "Restaurante & Academia Ecuestre",
+      category: "Restaurante & Ecuestre · Jalapa · Guatemala",
+      description: "Web completa para complejo que incluye restaurante, bar y academia ecuestre. Galería de eventos, caballos, academia y sistema de contacto directo.",
+      result: "Reservas semanales desde el sitio",
+      gradient: "from-yellow-900/60 via-amber-900/40 to-orange-900/60",
+      url: "https://yeguada10.vercel.app/",
+      video: "/casos/yeguada10/video.mp4",
+      image: "/casos/yeguada10/hero.jpeg",
     },
     {
       id: 3,
-      title: "Yeguada 10",
-      subtitle: "Restaurante & Academia Ecuestre",
-      category: "Web · Restaurante · Ecuestre · Guatemala",
-      description: "Sitio web para complejo que incluye restaurante, bar y academia ecuestre. Muestra eventos, caballos, academia, galería de fotos y sistema de contacto. Diseño premium con animaciones de scroll.",
-      metric: "Sitio completo",
-      progress: 100,
-      gradient: "from-yellow-900/60 via-amber-900/40 to-orange-900/60",
-      tag: "Restaurante & Ecuestre",
-      url: "https://yeguada10.vercel.app/",
-      video: "/casos/yeguada10/video.mp4",
-      images: [
-        "/casos/yeguada10/hero.jpeg",
-        "/casos/yeguada10/hero.jpeg",
-        "/casos/yeguada10/hero.jpeg",
-        "/casos/yeguada10/hero.jpeg"
-      ]
-    }
+      title: "Alejandro Requena",
+      subtitle: "Portfolio Artístico & Academia",
+      category: "Arte & Educación · Jalapa · Guatemala",
+      description: "Portfolio profesional para artista visual. Galería de obras, información de la academia Art Requena, testimonios y contacto directo. Diseño elegante con parallax.",
+      result: "Estudiantes nuevos desde Google",
+      gradient: "from-amber-900/60 via-orange-900/40 to-yellow-900/60",
+      url: "https://alejandro-requena.vercel.app/",
+      video: "/casos/alejandro-requena/video.mp4",
+      image: "/casos/alejandro-requena/hero.jpeg",
+    },
+  ],
+  chatbots: [
+    {
+      id: 4,
+      title: "Asistente de Restaurante",
+      subtitle: "Chatbot 24/7 para reservas",
+      category: "IA · Chatbot · Guatemala",
+      description: "Chatbot que responde WhatsApp e Instagram al instante. Agenda citas, responde preguntas sobre el menú, horarios y precios. Nunca más un mensaje sin respuesta.",
+      result: "Respuesta instantánea 24/7",
+      gradient: "from-green-900/60 via-emerald-900/40 to-teal-900/60",
+      url: "/ai",
+      image: "/casos/al-carbon/hero.jpeg",
+    },
+    {
+      id: 5,
+      title: "Asistente de Clínica",
+      subtitle: "Agendamiento automático",
+      category: "IA · Salud · Guatemala",
+      description: "Sistema de IA que agenda citas, responde preguntas frecuentes y deriva emergencias. Integración directa con calendario del negocio. El dueño solo revisa confirmaciones.",
+      result: "85% de llamadas automatizadas",
+      gradient: "from-blue-900/60 via-cyan-900/40 to-sky-900/60",
+      url: "/ai",
+      image: "/casos/yeguada10/hero.jpeg",
+    },
+  ],
+  automations: [
+    {
+      id: 6,
+      title: "Sistema de Pedidos",
+      subtitle: "Automatización de restaurante",
+      category: "Automatización · Restaurante · Guatemala",
+      description: "Pedidos de WhatsApp se convierten automáticamente en órdenes para cocina. Notificaciones al cliente, seguimiento de estado y resumen diario para el dueño. Todo sin intervención manual.",
+      result: "-40% en errores de pedido",
+      gradient: "from-purple-900/60 via-violet-900/40 to-fuchsia-900/60",
+      url: "/ai",
+      image: "/casos/al-carbon/hero.jpeg",
+    },
+    {
+      id: 7,
+      title: "Seguimiento de Leads",
+      subtitle: "CRM automático",
+      category: "Automatización · Ventas · Guatemala",
+      description: "Cada lead que contacta por cualquier canal entra automáticamente al sistema. Recibe seguimiento por WhatsApp, recordatorios y notificaciones al vendedor solo cuando el lead está calificado.",
+      result: "0 leads perdidos por falta de seguimiento",
+      gradient: "from-indigo-900/60 via-blue-900/40 to-purple-900/60",
+      url: "/ai",
+      image: "/casos/alejandro-requena/hero.jpeg",
+    },
+  ],
+};
+
+export default function CasosPage() {
+  const { t, lang } = useLang();
+  const c = t.casos;
+  const p = t.portfolio;
+  const [heroReady, setHeroReady] = useState(false);
+  const [activeTab, setActiveTab] = useState<TabKey>("websites");
+
+  const tabs: { key: TabKey; label: string }[] = [
+    { key: "websites", label: p.tabs.websites },
+    { key: "chatbots", label: p.tabs.chatbots },
+    { key: "automations", label: p.tabs.automations },
   ];
 
   return (
     <SiteLayout>
       {/* Hero */}
       <section className="relative overflow-hidden px-8 py-20 lg:py-32 circuit-bg">
-        {/* Bottom gradient line */}
         <div
           className="absolute bottom-0 left-0 w-full h-px"
-          style={{
-            background: "linear-gradient(90deg, transparent, rgba(147,51,234,0.5) 50%, transparent)",
-          }}
+          style={{ background: "linear-gradient(90deg, transparent, rgba(147,51,234,0.5) 50%, transparent)" }}
         />
-
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col items-start gap-4">
             <span className="font-[family-name:var(--font-space-grotesk)] text-primary text-xs uppercase tracking-[0.2rem] border-l-2 border-primary pl-4">
               {c.badge}
             </span>
             <h1 className="font-[family-name:var(--font-space-grotesk)] text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none max-w-4xl">
-              <ScrambleText
-                text={c.headlinePrefix}
-                duration={400}
-                className="block"
-                onComplete={() => {}}
-              />
+              <ScrambleText text={c.headlinePrefix} duration={400} className="block" />
               <ScrambleText
                 text={c.headlineGradient}
                 duration={400}
@@ -115,28 +151,31 @@ export default function CasosPage() {
             </p>
           </div>
         </div>
-        <div className="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none border-l border-outline-variant/15" />
       </section>
 
-      {/* Filter Bar */}
-      <section className="bg-surface border-y border-outline-variant/15">
-        <div className="max-w-[1440px] mx-auto px-8 py-6 flex flex-wrap items-center gap-4">
-          <span className="px-6 py-2 font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest bg-primary text-on-primary">
-            {c.filters.web}
-          </span>
-          <a
-            href="/ai"
-            className="px-6 py-2 font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest bg-surface-container-high text-on-surface-variant hover:text-primary transition-all btn-press"
-          >
-            {c.filters.ai}
-          </a>
+      {/* Tabs */}
+      <section className="bg-surface border-y border-outline-variant/15 sticky top-[72px] z-30">
+        <div className="max-w-[1440px] mx-auto px-8 py-4 flex flex-wrap items-center gap-2">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-6 py-2 font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest transition-all btn-press ${
+                activeTab === tab.key
+                  ? "bg-primary text-on-primary"
+                  : "bg-surface-container-high text-on-surface-variant hover:text-primary"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </section>
 
-      {/* Case Studies Grid */}
+      {/* Projects Grid */}
       <section className="px-8 py-20 max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {portfolioProjects.map((project, index) => (
+          {portfolioProjects[activeTab].map((project, index) => (
             <div
               key={project.id}
               className={`group relative flex flex-col gap-6 bg-surface-container-low p-8 transition-all hover:bg-surface-container-high ring-1 ring-outline-variant/10 hover:ring-primary/20 card-lift cursor-default page-enter ${
@@ -144,7 +183,7 @@ export default function CasosPage() {
               }`}
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
-            <div className={`relative aspect-[16/10] overflow-hidden rounded-sm`}>
+              <div className={`relative aspect-[16/10] overflow-hidden rounded-sm`}>
                 <div className="relative overflow-hidden rounded-sm h-full">
                   {project.video ? (
                     <video
@@ -157,7 +196,7 @@ export default function CasosPage() {
                     />
                   ) : (
                     <img
-                      src={project.images[0]}
+                      src={project.image}
                       alt={`${project.title} preview`}
                       className="w-full h-full object-cover transition-all duration-700"
                     />
@@ -165,17 +204,17 @@ export default function CasosPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent" />
                 </div>
                 <div className="absolute top-4 left-4 bg-primary px-3 py-1 text-on-primary font-[family-name:var(--font-space-grotesk)] text-[10px] uppercase font-bold tracking-tighter">
-                  {project.tag}
+                  {project.result}
                 </div>
               </div>
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-start">
-                  <h3 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight text-white">
-                    {project.title}
-                  </h3>
-                  <span className="font-[family-name:var(--font-space-grotesk)] text-primary text-xl font-bold">
-                    {project.metric}
-                  </span>
+                  <div>
+                    <h3 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-on-surface-variant text-sm mt-1">{project.subtitle}</p>
+                  </div>
                 </div>
                 <div className="font-[family-name:var(--font-space-grotesk)] text-primary text-xs uppercase tracking-[0.2rem]">
                   {project.category}
@@ -184,18 +223,16 @@ export default function CasosPage() {
                   {project.description}
                 </p>
                 <div className="mt-4 pt-6 border-t border-outline-variant/10 flex justify-between items-center">
-                  <div className="flex gap-4">
-                    {["web", "palette", "smartphone"].map((icon) => (
-                      <Icon key={icon} name={icon} className="text-outline text-lg icon-pulse" />
-                    ))}
-                  </div>
-                  <a 
-                    href={project.url} 
-                    target="_blank" 
+                  <span className="text-xs text-on-surface-variant font-[family-name:var(--font-space-grotesk)] uppercase tracking-widest">
+                    {lang === "es" ? "Resultado:" : "Result:"} {project.result}
+                  </span>
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary font-[family-name:var(--font-space-grotesk)] text-xs uppercase tracking-widest border-b border-primary pb-1 group-hover:pr-4 transition-all link-underline cursor-pointer"
                   >
-                    Ver sitio →
+                    {p.cta}
                   </a>
                 </div>
               </div>
@@ -216,7 +253,7 @@ export default function CasosPage() {
             {c.cta.subtitle}
           </p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-4">
-            <a href="/#contact">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <Button className="bg-primary text-on-primary px-6 sm:px-10 py-6 font-[family-name:var(--font-space-grotesk)] text-xs sm:text-sm uppercase tracking-[0.1rem] sm:tracking-[0.2rem] font-bold hover:bg-primary/90 btn-press btn-shimmer">
                 {c.cta.primary}
               </Button>

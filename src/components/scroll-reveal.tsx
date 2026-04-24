@@ -6,76 +6,46 @@ interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
   stagger?: number;
-  threshold?: number;
+  threshold?: number; // No se usa, se mantiene por compatibilidad
 }
 
 export function ScrollReveal({
   children,
   className = "",
   stagger,
-  threshold = 0.1,
+  threshold: _threshold,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [state, setState] = useState<"pending" | "hidden" | "revealed">("pending");
+  const [state, setState] = useState<"hidden" | "revealed">("hidden");
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const check = () => {
+    const onScroll = () => {
       const rect = el.getBoundingClientRect();
       const inView = rect.top < window.innerHeight + 100 && rect.bottom > -100;
-
       if (inView) {
         setState("revealed");
-        return true;
+        window.removeEventListener("scroll", onScroll);
       }
-
-      // Below viewport — hide and observe
-      setState("hidden");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            setState("revealed");
-            observer.disconnect();
-          }
-        },
-        { threshold, rootMargin: "50px" }
-      );
-      observer.observe(el);
-
-      return observer;
     };
 
-    // Delay to allow scroll restoration on back navigation
-    const timeoutId = setTimeout(() => {
-      const result = check();
-      // If observer was created, store for cleanup
-      if (result && typeof result !== "boolean") {
-        (el as HTMLElement & { _obs?: IntersectionObserver })._obs = result;
-      }
-    }, 150);
+    // Verificación inmediata al montar
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 100 && rect.bottom > -100) {
+      setState("revealed");
+    } else {
+      window.addEventListener("scroll", onScroll, { passive: true });
+      // Verificar de nuevo tras un delay por si el scroll cambió (ej. restauración de historial)
+      setTimeout(onScroll, 150);
+    }
 
-    return () => {
-      clearTimeout(timeoutId);
-      const obs = (el as HTMLElement & { _obs?: IntersectionObserver })._obs;
-      if (obs) obs.disconnect();
-    };
-  }, [threshold]);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const staggerClass = stagger ? `stagger-${stagger}` : "";
 
-  // Pending = still checking, show content (avoids flash of nothing)
-  if (state === "pending") {
-    return (
-      <div className={`${staggerClass} ${className}`}>
-        {children}
-      </div>
-    );
-  }
-
-  // Revealed: animate in
   if (state === "revealed") {
     return (
       <div
@@ -88,7 +58,6 @@ export function ScrollReveal({
     );
   }
 
-  // Hidden: below viewport
   return (
     <div
       ref={ref}

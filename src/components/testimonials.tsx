@@ -22,24 +22,24 @@ export function Testimonials() {
             </p>
             <div className="mt-12 flex items-center gap-4 text-primary font-[family-name:var(--font-space-grotesk)] text-sm uppercase tracking-widest">
               <Icon name="arrow_downward" />
-              {t.testimonials.trusted}
+              {t.testimonials.trusted || "Clientes reales"}
             </div>
           </div>
         </ScrollReveal>
 
         {/* Right testimonials */}
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col items-center">
           {t.testimonials.items.map((testimonial, i) => (
             <ScrollReveal key={testimonial.company} stagger={(i + 1) as 1 | 2 | 3}>
-              <div className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 relative group hover:border-primary/30 transition-all duration-500 card-lift cursor-default">
+              <div className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 relative group hover:border-primary/30 transition-all duration-500 card-lift cursor-default w-full max-w-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
                 <div className="relative z-10">
-                  <div className="mb-12">
+                  <div className="mb-8">
                     <span className="text-xs font-[family-name:var(--font-space-grotesk)] text-primary uppercase tracking-[0.3em]">
                       {testimonial.company}
                     </span>
                   </div>
-                  <blockquote className="text-xl md:text-2xl text-white leading-relaxed mb-12 italic">
+                  <blockquote className="text-xl md:text-2xl text-white leading-relaxed mb-8 italic">
                     {testimonial.quote}
                   </blockquote>
                   <div className="flex items-center gap-4">

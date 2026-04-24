@@ -42,7 +42,7 @@ function scrambleText(
   requestAnimationFrame(tick);
 }
 
-function TypedText({ words, speed, delay }: { words: string[]; speed: number; delay: number }) {
+function TypedText({ words, delay }: { words: string[]; delay: number }) {
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -87,6 +87,8 @@ function TypedText({ words, speed, delay }: { words: string[]; speed: number; de
   return <span ref={ref} />;
 }
 
+const WHATSAPP_LINK = "https://wa.me/50200000000?text=Hola%20Cenit%20Digital,%20quiero%20mi%20diagnóstico%20gratis";
+
 export function Hero() {
   const { t } = useLang();
   const line1Ref = useRef<HTMLSpanElement>(null);
@@ -94,27 +96,25 @@ export function Hero() {
   const [scrambleDone, setScrambleDone] = useState(false);
 
   const words = [
-    "una página web.",
-    "automatización.",
-    "un chatbot 24/7.",
     "más reservas.",
+    "más pedidos.",
+    "menos trabajo manual.",
+    "clientes 24/7.",
   ];
 
   useEffect(() => {
     if (!line1Ref.current || !line2Ref.current) return;
 
-    // Scramble line 1
-    scrambleText(line1Ref.current, "Más clientes.", 800, () => {
-      // Scramble line 2 after 600ms
+    scrambleText(line1Ref.current, t.hero.headlinePrefix, 800, () => {
       setTimeout(() => {
         if (line2Ref.current) {
-          scrambleText(line2Ref.current, "Menos trabajo.", 800, () => {
+          scrambleText(line2Ref.current, t.hero.headlineGradient, 800, () => {
             setScrambleDone(true);
           });
         }
       }, 600);
     });
-  }, []);
+  }, [t]);
 
   return (
     <section className="relative min-h-[921px] flex items-center px-4 md:px-8 overflow-hidden circuit-bg">
@@ -145,10 +145,7 @@ export function Hero() {
 
           {/* Scramble title */}
           <h1 className="font-[family-name:var(--font-space-grotesk)] font-bold leading-tight tracking-tighter text-white">
-            <span
-              ref={line1Ref}
-              className="block text-5xl md:text-7xl"
-            >
+            <span ref={line1Ref} className="block text-5xl md:text-7xl">
               &nbsp;
             </span>
             <span
@@ -161,35 +158,24 @@ export function Hero() {
           </h1>
 
           {/* Typed section */}
-          <div
-            className={`transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
-          >
+          <div className={`transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}>
             <p className="text-2xl md:text-3xl font-[family-name:var(--font-space-grotesk)] font-medium text-on-surface-variant">
               Tu negocio necesita{" "}
               <span className="text-white">
-                <TypedText words={words} speed={85} delay={0} />
+                <TypedText words={words} delay={0} />
               </span>
-              <span
-                className="typed-cursor"
-                style={{ color: "#9333ea", fontWeight: "bold" }}
-              >
-                |
-              </span>
+              <span className="typed-cursor" style={{ color: "#9333ea", fontWeight: "bold" }}>|</span>
             </p>
           </div>
 
           {/* Subtitle */}
-          <p
-            className={`text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
-          >
+          <p className={`text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}>
             {t.hero.subtitle}
           </p>
 
           {/* CTAs */}
-          <div
-            className={`flex flex-wrap gap-4 pt-4 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
-          >
-            <a href="/casos">
+          <div className={`flex flex-wrap gap-4 pt-4 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <Button className="bg-primary text-on-primary px-4 md:px-8 py-6 font-[family-name:var(--font-space-grotesk)] font-bold text-lg hover:shadow-[0_0_20px_rgba(209,188,255,0.4)] transition-all hover:bg-primary/90 btn-press btn-shimmer">
                 {t.hero.ctaPrimary}
               </Button>
@@ -205,29 +191,17 @@ export function Hero() {
           </div>
 
           {/* Trust badges */}
-          <div
-            className={`flex flex-wrap gap-6 pt-8 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
-          >
-            {[
-              "✓ Sitio web listo en 7 días",
-              "✓ Automatización desde Q2,500",
-              "✓ Soporte mientras lo necesites",
-              "✓ Sin conocimientos técnicos",
-            ].map((badge) => (
-              <span
-                key={badge}
-                className="text-sm font-[family-name:var(--font-space-grotesk)] text-on-surface-variant"
-              >
-                {badge}
+          <div className={`flex flex-wrap gap-6 pt-8 transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}>
+            {[t.hero.trust1, t.hero.trust2, t.hero.trust3, t.hero.trust4].map((badge) => (
+              <span key={badge} className="text-sm font-[family-name:var(--font-space-grotesk)] text-on-surface-variant">
+                ✓ {badge}
               </span>
             ))}
           </div>
         </div>
 
         {/* Right — Floating 3D Logo */}
-        <div
-          className={`lg:col-span-5 relative hidden lg:flex justify-center items-center transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}
-        >
+        <div className={`lg:col-span-5 relative hidden lg:flex justify-center items-center transition-opacity duration-700 ${scrambleDone ? "opacity-100" : "opacity-0"}`}>
           <div className="absolute w-80 h-80 bg-primary/10 rounded-full blur-[120px]" />
           <div className="logo-float-3d">
             <img
@@ -239,7 +213,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Cursor blink + logo float */}
       <style>{`
         @keyframes cursorBlink {
           0%, 100% { opacity: 1; }

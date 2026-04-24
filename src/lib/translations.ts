@@ -2,417 +2,517 @@ export type Lang = "en" | "es";
 
 export const translations = {
   en: {
-    // Navbar
     nav: {
       home: "Home",
-      caseStudies: "Case Studies",
-      consultation: "Consultation",
+      portfolio: "Portfolio",
+      process: "Process",
+      pricing: "Pricing",
+      consultation: "Free Call",
     },
-    // Hero
     hero: {
       badge: "DIGITAL AGENCY · GUATEMALA",
-      headlinePrefix: "More clients.",
-      headlineGradient: "Less manual work.",
-      headlineSuffix: "",
+      headlinePrefix: "Your business is losing",
+      headlineGradient: "clients every day.",
       subtitle:
-        "We build websites and AI systems for businesses that want to grow without hiring more people.",
-      ctaPrimary: "See our work",
-      ctaSecondary: "Book a free call",
-      cards: {},
+        "While you sleep, your competitors respond faster. We build websites and AI systems that work 24/7 so you stop losing money to manual processes.",
+      ctaPrimary: "Get a free diagnostic →",
+      ctaSecondary: "See our work",
+      trust1: "Site ready in 7 days",
+      trust2: "From Q2,500",
+      trust3: "WhatsApp response in <1hr",
+      trust4: "No technical knowledge needed",
     },
-    // Services
+    problem: {
+      badge: "THE PROBLEM",
+      title: "This is what a business without automation looks like",
+      cards: [
+        {
+          icon: "📱",
+          stat: "30+",
+          label: "Daily unanswered messages",
+          desc: "WhatsApp, Instagram, Facebook — all asking for a response and the owner can't keep up.",
+        },
+        {
+          icon: "⏰",
+          stat: "1-3h",
+          label: "Average response delay",
+          desc: "By the time you reply, the customer already chose your competitor.",
+        },
+        {
+          icon: "💸",
+          stat: "40%",
+          label: "Leads lost",
+          desc: "Almost half of reservations and orders are lost due to lack of response.",
+        },
+      ],
+    },
     services: {
-      badge: "Tailored Capabilities",
-      title: "Bespoke Architectural Services",
+      badge: "WHAT WE DO",
+      title: "Three ways we make your business earn more",
       items: {
-        automations: {
-          label: "Custom Engine",
-          title: "Proprietary Automations",
-          description:
-            "We develop unique autonomous scripts that map perfectly to your specific internal protocols, rather than forcing your team into rigid third-party workflows.",
-        },
-        dashboards: {
-          label: "Niche UI",
-          title: "Exclusive Dashboards",
-          description:
-            "Intelligence interfaces designed around your exact KPIs, providing clarity that generic tools simply can't offer.",
-        },
-        crm: {
-          label: "Private Hub",
-          title: "Tailored CRM Systems",
-          description:
-            "Built from the ground up for your specific sales cycle, ensuring every data point captured is relevant to your bottom line.",
-        },
         web: {
-          title: "Custom Web Infrastructure",
+          tag: "WEBSITES",
+          title: "A website that sells while you sleep",
           description:
-            "High-performance architectures engineered for your specific security needs and traffic patterns.",
+            "Not just a pretty page. A site designed to turn visitors into WhatsApp messages, calls, and reservations. Fast, mobile-first, and built for Guatemala.",
+          features: ["WhatsApp button always visible", "Google-friendly from day one", "Loads in under 2 seconds"],
         },
         ai: {
-          title: "Specialized AI Agents",
+          tag: "CHATBOTS & AI",
+          title: "A 24/7 assistant that never gets tired",
           description:
-            "AI callers and chatbots trained on your unique industry knowledge and brand voice.",
+            "Answers WhatsApp and Instagram instantly. Books appointments, answers FAQs, and qualifies leads — all without you touching your phone.",
+          features: ["Responds in seconds, not hours", "Books into your calendar", "Speaks Spanish naturally"],
+        },
+        automation: {
+          tag: "AUTOMATIONS",
+          title: "Systems that run your business for you",
+          description:
+            "Orders, inventory, follow-ups, reminders — all on autopilot. You focus on growing; the system handles the repetitive work.",
+          features: ["Auto-replies and follow-ups", "Connected to your existing tools", "Monthly performance reports"],
         },
       },
     },
-    // Process
     process: {
-      badge: "Our Workflow",
-      title: "Custom Execution Framework",
+      badge: "HOW IT WORKS · 4 STEPS",
+      title: "From zero to selling in under 2 weeks",
       steps: [
         {
           number: "01",
-          title: "Assessment",
-          description: "We analyze your business, identify manual processes, and pinpoint where technology can save you time and money.",
+          title: "Free Diagnostic",
+          description: "30-min call. We identify where you're losing money and what to fix first.",
         },
         {
           number: "02",
           title: "Proposal",
-          description: "We design a tailored technical plan: automation flows, wireframes, and a clear tech stack from day one.",
+          description: "Exact scope, exact price, exact timeline. No surprises.",
         },
         {
           number: "03",
-          title: "Development",
-          description: "We build your solution with constant check-ins. You see progress in real time and we adjust together.",
+          title: "Build",
+          description: "7-14 days. You see progress every 2-3 days. We adjust as we go.",
         },
         {
           number: "04",
           title: "Launch & Support",
-          description: "We deploy everything to production, train your team, and handle ongoing maintenance.",
+          description: "We launch, train you, and stay available. 3 months support included.",
         },
       ],
     },
-    // Stats
+    portfolio: {
+      badge: "PORTFOLIO",
+      title: "Real projects for real businesses",
+      tabs: {
+        websites: "Websites",
+        chatbots: "Chatbots & AI",
+        automations: "Automations",
+      },
+      cta: "Want something like this? →",
+    },
+    pricing: {
+      badge: "PRICING",
+      title: "Transparent prices. No hidden fees.",
+      subtitle: "Everything includes hosting, domain, and 3 months of support.",
+      tiers: [
+        {
+          name: "Starter",
+          price: "Q2,500",
+          desc: "Perfect for new businesses needing a professional presence.",
+          features: [
+            "1-page landing site",
+            "WhatsApp integration",
+            "Mobile optimized",
+            "Google indexing",
+            "1 round of revisions",
+          ],
+          cta: "Start with this →",
+          popular: false,
+        },
+        {
+          name: "Business",
+          price: "Q5,500",
+          desc: "For businesses ready to convert visitors into customers.",
+          features: [
+            "Multi-page site (up to 5)",
+            "WhatsApp + Instagram chatbot",
+            "Reservations / orders system",
+            "Admin dashboard",
+            "3 rounds of revisions",
+            "Priority support",
+          ],
+          cta: "Most popular →",
+          popular: true,
+        },
+        {
+          name: "Growth",
+          price: "Q12,000+",
+          desc: "Full automation stack for businesses scaling fast.",
+          features: [
+            "Everything in Business",
+            "Custom AI agent",
+            "Full workflow automation",
+            "CRM + analytics dashboard",
+            "Unlimited revisions",
+            "Lifetime support",
+          ],
+          cta: "Let's talk →",
+          popular: false,
+        },
+      ],
+      note: "All prices one-time. Monthly maintenance available from Q350/month after the included 3 months.",
+    },
     stats: {
       items: [
-        { value: "98%", label: "Client Satisfaction" },
-        { value: "250+", label: "Projects Delivered" },
-        { value: "15k", label: "Hours Saved for Clients" },
-        { value: "12ms", label: "Avg. Response Time" },
+        { value: "7-14", label: "Days to launch" },
+        { value: "100%", label: "Guatemalan businesses" },
+        { value: "Q2,500", label: "Starting price" },
+        { value: "24/7", label: "Support available" },
       ],
     },
-    // Testimonials
     testimonials: {
-      headline: "Our customers have no margin for error.",
-      subtitle:
-        "In high-stakes industries, precision is not a preference—it's a requirement. We partner with leaders who demand absolute reliability and long-term ecosystem stability.",
-      trusted: "Trusted by industry leaders",
+      headline: "Businesses that stopped losing clients",
+      subtitle: "We don't do one-off projects. We build systems that keep working.",
+      trusted: "Real clients",
       items: [
         {
-          company: "BAE SYSTEMS",
-          quote:
-            '"Delivering cost effective and innovative solutions across our manufacturing operations is critical to maintaining a leading position in the UK combat air sector. Working alongside Cenit Digital helps us to ensure we\'re able to maintain that edge for our customers."',
-          name: "PAUL",
-          role: "HEAD OF AIRFRAME TECHNOLOGY @BAE SYSTEMS",
+          company: "AL CARBÓN",
+          quote: "\"Before, we lost reservations daily because nobody answered the phone. Now the chatbot handles it 24/7 and we just check the calendar in the morning.\"",
+          name: "Owner",
+          role: "Restaurant · Jalapa",
         },
         {
-          company: "NIAR",
-          quote:
-            '"The specialized dashboards provided by Cenit Digital allowed us to synchronize complex research data across multiple departments with sub-millisecond accuracy. Their engineering standards are unparalleled."',
-          name: "DR. SARAH CHEN",
-          role: "DIRECTOR OF DIGITAL TWIN OPERATIONS @NIAR",
+          company: "YEGUADA 10",
+          quote: "\"Our website went from 'we should have one' to 'we get bookings through it every week.' The investment paid for itself in a month.\"",
+          name: "Management",
+          role: "Restaurant & Equestrian · Jalapa",
         },
         {
-          company: "PALL CORPORATION",
-          quote:
-            '"We required a custom CRM system that could handle the intricate logic of global filtration supply chains. What Cenit Digital delivered wasn\'t just software; it was a competitive advantage."',
-          name: "MARK R.",
-          role: "SENIOR VP OF LOGISTICS @PALL CORPORATION",
+          company: "ARTE REQUENA",
+          quote: "\"Students find the academy through Google now. Before, we relied entirely on word of mouth.\"",
+          name: "Alejandro Requena",
+          role: "Artist & Academy · Jalapa",
         },
       ],
     },
-    // FAQ
     faq: {
-      badge: "Common Inquiries",
-      title: "FAQ",
+      badge: "FAQ",
+      title: "What everyone asks",
       items: [
         {
-          question: "How long does a typical project take?",
+          question: "How much does a website cost?",
           answer:
-            "It depends on complexity. A landing page or simple automation can be ready in 2-3 weeks. A custom system with dashboards and chatbots takes 4-8 weeks. We always give you a clear timeline from the start.",
+            "A professional landing page starts at Q2,500. A full site with reservations, menu, and WhatsApp integration runs Q5,000-15,000 depending on complexity. We give you an exact price after the free diagnostic call.",
         },
         {
-          question: "What happens after the project is done?",
+          question: "How fast can you deliver?",
           answer:
-            "We don't disappear. We offer ongoing maintenance: updates, monitoring, and support whenever you need it. This is handled with a fixed monthly fee so your system always runs at 100%.",
+            "A landing page: 7 days. A full business site: 14-21 days. You see a working demo in 72 hours so you can give feedback early.",
         },
         {
-          question: "Can you integrate with tools I already use?",
+          question: "What if I need changes after launch?",
           answer:
-            "Absolutely. We integrate with CRMs, payment gateways, Google Sheets, WhatsApp, email, and pretty much any tool that has an API. If you already use it, we connect it.",
+            "First 3 months of changes and support are included. After that, we offer maintenance plans starting at Q350/month with unlimited small updates.",
         },
         {
-          question: "Do I need to be tech-savvy to use what you build?",
+          question: "Do I need to know technology?",
           answer:
-            "Not at all. We design everything to be easy to use. Automations run on their own, dashboards are visual and intuitive, and chatbots are configured so you don't have to touch anything technical.",
+            "Not at all. Everything is designed for you to manage from your phone. If you can use WhatsApp, you can use any system we build.",
+        },
+        {
+          question: "Do you work outside Jalapa?",
+          answer:
+            "Yes. We work 100% remote with businesses anywhere in Guatemala. The diagnostic call is via video, and the process is just as fast regardless of location.",
         },
       ],
     },
-    // Contact
     contact: {
-      title: "Start Your Custom Build",
+      badge: "LET'S TALK",
+      title: "Free 20-minute diagnostic",
       subtitle:
-        "Share your vision with us. We specialize in engineering bespoke solutions and maintaining them for life through our comprehensive post-delivery support framework.",
-      benefits: {
-        roadmap: "Tailored Technical Roadmap",
-        security: "Continuous Security & Updates",
-        stability: "Monthly Performance Stability",
-      },
+        "No commitment. We'll tell you if we can help and exactly what it would cost.",
+      cta: "Message us on WhatsApp →",
+      ctaNote: "We reply in under 1 hour during business hours.",
       form: {
-        fullName: "Full Name",
-        fullNamePlaceholder: "John Doe",
-        email: "Work Email",
-        emailPlaceholder: "john@company.com",
-        company: "Company Name",
-        companyPlaceholder: "Enter company name",
-        details: "Project Details",
-        detailsPlaceholder: "Describe your unique infrastructure needs...",
-        submit: "Submit Request",
-        note: "Note: All builds include mandatory monthly maintenance for security and long-term stability.",
+        name: "Name",
+        namePlaceholder: "Your name",
+        business: "Business",
+        businessPlaceholder: "Restaurant, store, service...",
+        phone: "WhatsApp",
+        phonePlaceholder: "+502 1234 5678",
+        submit: "Send message",
       },
     },
-    // Footer
     footer: {
-      copyright: "© 2025 Cenit Digital. Digital solutions that transform your business.",
-      privacy: "Privacy Policy",
-      terms: "Terms of Service",
-      status: "System Status: Optimal",
+      copyright: "© 2025 Cenit Digital. Built in Guatemala for Guatemalan businesses.",
+      privacy: "Privacy",
+      terms: "Terms",
     },
-    // Case Studies Page
     casos: {
-      badge: "Digital Solutions Architecture",
-      headlinePrefix: "Real Impact:",
-      headlineGradient: "Our Case Studies",
-      subtitle: "Digital solutions designed to scale your business and deliver measurable results.",
-      filters: {
-        all: "All Projects",
-        automation: "Automation",
-        dashboards: "Dashboards",
-        ai: "AI & Chatbots",
-        web: "Custom Web",
-      },
-      viewCaseStudy: "View Full Case Study",
-      explore: "Explore Solution",
+      badge: "PORTFOLIO",
+      headlinePrefix: "What we've",
+      headlineGradient: "built",
+      subtitle: "Real projects. Real businesses. Real results.",
       cta: {
-        headlinePrefix: "Ready to build your",
-        headlineGradient: "next project?",
-        subtitle: "Join the businesses already using custom digital solutions to dominate their markets.",
-        primary: "Work With Us",
-        secondary: "Our Methodology",
+        headlinePrefix: "Want something",
+        headlineGradient: "like this?",
+        subtitle: "We work with businesses that want to grow without getting buried in tech.",
+        primary: "Let's talk →",
+        secondary: "See how we work",
       },
-      projects: [
-        {
-          tag: "Automation",
-          title: "El Fogón Restaurant",
-          metric: "-40% Errors",
-          description: "Full order automation with n8n connecting the waiter app, kitchen, and billing. Real-time sales dashboard for the owner.",
-          icons: ["restaurant", "auto_awesome", "dashboard"],
-        },
-        {
-          tag: "AI & Chatbots",
-          title: "Sonrisas Dental Clinic",
-          metric: "80% Calls",
-          description: "AI receptionist that schedules appointments, answers FAQs, and routes emergencies. Direct integration with the clinic's scheduling system.",
-          icons: ["smart_toy", "calendar_month", "call"],
-        },
-        {
-          tag: "Dashboards",
-          title: "Rápida Distribution",
-          metricLabel: "Decision Time Reduction",
-          metricValue: "-60%",
-          description: "Real-time dashboard for inventory, delivery routes, and order status. Managers now make decisions with fresh data, not last week's reports.",
-          wide: true,
-        },
-        {
-          tag: "Web & Chatbot",
-          title: "ModaStyle Store",
-          metric: "85% Automated",
-          description: "WhatsApp chatbot that handles orders, stock queries, payments, and shipping tracking. The store stopped losing sales after hours.",
-          icons: ["chat", "shopping_cart", "payments"],
-        },
-      ],
     },
   },
 
   es: {
     nav: {
       home: "Inicio",
-      caseStudies: "Casos de Estudio",
-      consultation: "Consultoría",
+      portfolio: "Portafolio",
+      process: "Proceso",
+      pricing: "Precios",
+      consultation: "Llamada gratis",
     },
     hero: {
       badge: "AGENCIA DIGITAL · GUATEMALA",
-      headlinePrefix: "Más clientes.",
-      headlineGradient: "Menos trabajo manual.",
-      headlineSuffix: "",
+      headlinePrefix: "Tu negocio está perdiendo",
+      headlineGradient: "clientes todos los días.",
       subtitle:
-        "Construimos páginas web y sistemas con IA para negocios guatemaltecos que quieren crecer sin contratar más personal.",
-      ctaPrimary: "Ver nuestro trabajo",
-      ctaSecondary: "Agendar llamada gratis",
-      cards: {},
+        "Mientras dormís, tu competencia responde más rápido. Construimos páginas web y sistemas con IA que trabajan 24/7 para que dejés de perder plata con procesos manuales.",
+      ctaPrimary: "Diagnóstico gratis →",
+      ctaSecondary: "Ver nuestro trabajo",
+      trust1: "Sitio listo en 7 días",
+      trust2: "Desde Q2,500",
+      trust3: "Respuesta por WhatsApp <1hr",
+      trust4: "Sin saber de tecnología",
+    },
+    problem: {
+      badge: "EL PROBLEMA",
+      title: "Así se ve un negocio sin automatización",
+      cards: [
+        {
+          icon: "📱",
+          stat: "30+",
+          label: "Mensajes sin responder al día",
+          desc: "WhatsApp, Instagram, Facebook — todos piden respuesta y el dueño no da abasto.",
+        },
+        {
+          icon: "⏰",
+          stat: "1-3h",
+          label: "Demora promedio de respuesta",
+          desc: "Para cuando contestás, el cliente ya eligió a tu competencia.",
+        },
+        {
+          icon: "💸",
+          stat: "40%",
+          label: "Leads perdidos",
+          desc: "Casi la mitad de reservaciones y pedidos se pierden por falta de respuesta.",
+        },
+      ],
     },
     services: {
-      badge: "Lo que hacemos",
-      title: "Servicios",
+      badge: "QUÉ HACEMOS",
+      title: "Tres formas de hacer que tu negocio gane más",
       items: {
-        automations: {
-          label: "Motor Propio",
-          title: "Responde WhatsApp e Instagram automáticamente",
-          description:
-            "Tu negocio atiende clientes 24/7 sin que vos estés pegado al celular.",
-        },
-        dashboards: {
-          label: "UI de Nicho",
-          title: "Ve las métricas de tu negocio desde el celular",
-          description:
-            "Ventas, reservas y clientes nuevos — todo en una pantalla simple.",
-        },
-        crm: {
-          label: "Hub Privado",
-          title: "Nunca pierdas un cliente por no dar seguimiento",
-          description:
-            "Cada lead entra al sistema y recibe seguimiento automático hasta que compra.",
-        },
         web: {
-          title: "Tu página siempre activa, rápida y segura",
+          tag: "PÁGINAS WEB",
+          title: "Una web que vende mientras dormís",
           description:
-            "Hosting, dominio y mantenimiento incluido. Sin sorpresas.",
+            "No es solo una página bonita. Es un sitio diseñado para convertir visitantes en mensajes de WhatsApp, llamadas y reservaciones. Rápido, mobile-first y hecho para Guatemala.",
+          features: ["Botón de WhatsApp siempre visible", "Amigable con Google desde el día 1", "Carga en menos de 2 segundos"],
         },
         ai: {
-          title: "Un asistente con IA que trabaja por vos 24/7",
+          tag: "CHATBOTS E IA",
+          title: "Un asistente 24/7 que nunca se cansa",
           description:
-            "Responde preguntas, agenda citas y filtra leads — todo sin intervención humana.",
+            "Responde WhatsApp e Instagram al instante. Agenda citas, responde preguntas frecuentes y califica leads — todo sin que toques el celular.",
+          features: ["Responde en segundos, no en horas", "Agenda en tu calendario", "Habla español natural"],
+        },
+        automation: {
+          tag: "AUTOMATIZACIONES",
+          title: "Sistemas que manejan tu negocio por vos",
+          description:
+            "Pedidos, inventario, seguimientos, recordatorios — todo en automático. Vos te enfocás en crecer; el sistema se encarga de lo repetitivo.",
+          features: ["Respuestas y seguimientos automáticos", "Conectado con tus herramientas actuales", "Reportes mensuales de rendimiento"],
         },
       },
     },
     process: {
-      badge: "PROCESO · 4 PASOS",
-      title: "Así trabajamos con vos",
+      badge: "CÓMO TRABAJAMOS · 4 PASOS",
+      title: "De cero a vendiendo en menos de 2 semanas",
       steps: [
         {
           number: "01",
-          title: "Diagnóstico",
-          description: "Entendemos tu negocio en una llamada de 30 minutos",
+          title: "Diagnóstico gratis",
+          description: "Llamada de 30 min. Identificamos dónde estás perdiendo plata y qué arreglar primero.",
         },
         {
           number: "02",
           title: "Propuesta",
-          description: "Te presentamos exactamente qué vamos a construir y cuánto cuesta",
+          description: "Alcance exacto, precio exacto, tiempo exacto. Sin sorpresas.",
         },
         {
           number: "03",
-          title: "Desarrollo",
-          description: "Construimos en 7-21 días con actualizaciones constantes",
+          title: "Construcción",
+          description: "7-14 días. Ves progreso cada 2-3 días. Ajustamos sobre la marcha.",
         },
         {
           number: "04",
-          title: "Lanzamiento",
-          description: "Lanzamos y te enseñamos a usarlo. Soporte incluido.",
+          title: "Lanzamiento y soporte",
+          description: "Lanzamos, te entrenamos y seguimos disponibles. 3 meses de soporte incluidos.",
         },
       ],
     },
+    portfolio: {
+      badge: "PORTAFOLIO",
+      title: "Proyectos reales para negocios reales",
+      tabs: {
+        websites: "Páginas Web",
+        chatbots: "Chatbots e IA",
+        automations: "Automatizaciones",
+      },
+      cta: "¿Querés algo así? →",
+    },
+    pricing: {
+      badge: "PRECIOS",
+      title: "Precios transparentes. Sin letra chica.",
+      subtitle: "Todo incluye hosting, dominio y 3 meses de soporte.",
+      tiers: [
+        {
+          name: "Starter",
+          price: "Q2,500",
+          desc: "Perfecto para negocios nuevos que necesitan presencia profesional.",
+          features: [
+            "Sitio landing de 1 página",
+            "Integración con WhatsApp",
+            "Optimizado para celular",
+            "Indexado en Google",
+            "1 ronda de revisiones",
+          ],
+          cta: "Empezar con este →",
+          popular: false,
+        },
+        {
+          name: "Business",
+          price: "Q5,500",
+          desc: "Para negocios listos para convertir visitas en clientes.",
+          features: [
+            "Sitio multi-página (hasta 5)",
+            "Chatbot WhatsApp + Instagram",
+            "Sistema de reservas / pedidos",
+            "Panel de administración",
+            "3 rondas de revisiones",
+            "Soporte prioritario",
+          ],
+          cta: "El más popular →",
+          popular: true,
+        },
+        {
+          name: "Growth",
+          price: "Q12,000+",
+          desc: "Stack completo de automatización para negocios que escalan rápido.",
+          features: [
+            "Todo lo de Business",
+            "Agente de IA personalizado",
+            "Automatización de flujos completa",
+            "CRM + dashboard de analytics",
+            "Revisiones ilimitadas",
+            "Soporte de por vida",
+          ],
+          cta: "Hablemos →",
+          popular: false,
+        },
+      ],
+      note: "Todos los precios son únicos (one-time). Mantenimiento mensual disponible desde Q350/mes después de los 3 meses incluidos.",
+    },
     stats: {
       items: [
-        { value: "3", label: "Negocios en Jalapa con sitio activo" },
-        { value: "+85%", label: "Aumento en reservas · La Fuga" },
-        { value: "72 hrs", label: "Tiempo promedio de entrega de demo" },
+        { value: "7-14", label: "Días para lanzar" },
+        { value: "100%", label: "Negocios guatemaltecos" },
         { value: "Q2,500", label: "Precio de entrada" },
+        { value: "24/7", label: "Soporte disponible" },
       ],
     },
     testimonials: {
-      headline: "Creamos proyectos que crecen con vos",
-      subtitle:
-        "Soporte vitalicio, sin contratos forzosos. Si tu negocio crece, el sistema crece con vos.",
-      trusted: "Nuestro compromiso",
+      headline: "Negocios que dejaron de perder clientes",
+      subtitle: "No hacemos proyectos de una vez. Construimos sistemas que siguen trabajando.",
+      trusted: "Clientes reales",
       items: [
         {
-          company: "CENIT DIGITAL",
-          quote:
-            '"No desaparecemos después de entregar. Tu proyecto tiene soporte de por vida — actualizaciones, cambios y soporte cuando lo necesites."',
-          name: "Equipo Cenit",
-          role: "Agencia Digital · Guatemala",
+          company: "AL CARBÓN",
+          quote: "\"Antes perdíamos reservaciones todos los días porque nadie contestaba el teléfono. Ahora el chatbot las maneja 24/7 y solo revisamos el calendario en la mañana.\"",
+          name: "Dueño",
+          role: "Restaurante · Jalapa",
+        },
+        {
+          company: "YEGUADA 10",
+          quote: "\"Nuestra web pasó de 'deberíamos tener una' a 'recibimos reservas por ahí todas las semanas'. La inversión se pagó sola en un mes.\"",
+          name: "Administración",
+          role: "Restaurante & Ecuestre · Jalapa",
+        },
+        {
+          company: "ARTE REQUENA",
+          quote: "\"Los estudiantes encuentran la academia por Google ahora. Antes dependíamos 100% del boca a boca.\"",
+          name: "Alejandro Requena",
+          role: "Artista & Academia · Jalapa",
         },
       ],
     },
     faq: {
-      badge: "Preguntas frecuentes",
+      badge: "PREGUNTAS FRECUENTES",
       title: "Lo que siempre preguntan",
       items: [
         {
           question: "¿Cuánto cuesta una página web?",
           answer:
-            "Depende de lo que necesites. Una landing page profesional empieza desde Q2,500. Un sitio completo con reservas, menú y WhatsApp integrado ronda Q5,000-15,000. Te damos precio exacto después de la llamada de diagnóstico.",
+            "Una landing page profesional empieza en Q2,500. Un sitio completo con reservas, menú y WhatsApp integrado ronda Q5,000-15,000 según complejidad. Te damos precio exacto después de la llamada de diagnóstico gratis.",
         },
         {
-          question: "¿En cuánto tiempo me entregan el sitio?",
+          question: "¿En cuánto tiempo me entregan?",
           answer:
-            "Una demo funcional la entregamos en 72 horas. El sitio final toma entre 7 y 21 días dependiendo de la complejidad. Siempre con actualizaciones constantes durante el proceso.",
+            "Landing page: 7 días. Sitio completo: 14-21 días. Ves una demo funcional en 72 horas para que des feedback temprano.",
         },
         {
           question: "¿Qué pasa si quiero hacer cambios después?",
           answer:
-            "Los primeros 3 meses de soporte están incluidos. Después ofrecemos mantenimiento mensual con actualizaciones ilimitadas. Sin contratos forzosos — si no te gusta, cancelás cuando quieras.",
+            "Los primeros 3 meses de cambios y soporte están incluidos. Después ofrecemos planes de mantenimiento desde Q350/mes con actualizaciones ilimitadas chicas.",
         },
         {
-          question: "¿Necesito saber de tecnología para usar lo que construyen?",
+          question: "¿Necesito saber de tecnología?",
           answer:
-            "Para nada. Todo está diseñado para que lo manejes desde tu celular. Si sabés usar WhatsApp, podés usar cualquier sistema que construyamos.",
+            "Para nada. Todo está diseñado para que lo manejés desde tu celular. Si sabés usar WhatsApp, podés usar cualquier sistema que construyamos.",
         },
         {
-          question: "¿Pueden hacer algo parecido a lo que le hicieron a Al Carbón?",
-          answer:
-            "Sí, y podemos adaptarlo a tu tipo de negocio. Cada proyecto es único — lo que hicimos para un restaurante es diferente a lo que haríamos para una tienda o un servicio.",
-        },
-        {
-          question: "¿Trabajan con negocios fuera de Jalapa?",
+          question: "¿Trabajan fuera de Jalapa?",
           answer:
             "Sí. Trabajamos 100% remoto con negocios en toda Guatemala. La llamada de diagnóstico es por videollamada y el proceso es igual de ágil sin importar dónde estés.",
         },
       ],
     },
     contact: {
-      title: "¿Hablamos 20 minutos?",
+      badge: "HABLEMOS",
+      title: "Diagnóstico gratis de 20 minutos",
       subtitle:
-        "Sin compromiso. Te decimos si podemos ayudarte y cuánto costaría.",
-      benefits: {
-        roadmap: "Hoja de Ruta Personalizada",
-        security: "Seguridad y Actualizaciones",
-        stability: "Estabilidad Mensual",
-      },
+        "Sin compromiso. Te decimos si podemos ayudarte y exacto cuánto costaría.",
+      cta: "Escribinos por WhatsApp →",
+      ctaNote: "Respondemos en menos de 1 hora en horario laboral.",
       form: {
-        fullName: "Nombre Completo",
-        fullNamePlaceholder: "Juan Pérez",
-        email: "WhatsApp",
-        emailPlaceholder: "+502 1234 5678",
-        company: "Tipo de Negocio",
-        companyPlaceholder: "Ej: Restaurante, Tienda, Servicio",
-        details: "Detalles del Proyecto",
-        detailsPlaceholder: "Contanos qué necesitás...",
-        submit: "Quiero una llamada gratis",
-        note: "Respuesta en menos de 24 horas.",
+        name: "Nombre",
+        namePlaceholder: "Tu nombre",
+        business: "Negocio",
+        businessPlaceholder: "Restaurante, tienda, servicio...",
+        phone: "WhatsApp",
+        phonePlaceholder: "+502 1234 5678",
+        submit: "Enviar mensaje",
       },
     },
     footer: {
-      copyright: "© 2025 Cenit Digital. Soluciones digitales que transforman tu negocio.",
-      privacy: "Política de Privacidad",
-      terms: "Términos de Servicio",
-      status: "Estado del Sistema: Óptimo",
+      copyright: "© 2025 Cenit Digital. Hecho en Guatemala para negocios guatemaltecos.",
+      privacy: "Privacidad",
+      terms: "Términos",
     },
-    // Case Studies Page
     casos: {
       badge: "PORTAFOLIO",
       headlinePrefix: "Lo que hemos",
       headlineGradient: "construido",
-      subtitle: "Proyectos reales para negocios reales en Guatemala.",
-      filters: {
-        all: "Todos los Proyectos",
-        automation: "Automatización",
-        dashboards: "Dashboards",
-        ai: "IA & Chatbots",
-        web: "Web Personalizada",
-      },
-      viewCaseStudy: "Ver Caso Completo",
-      explore: "Explorar Solución",
+      subtitle: "Proyectos reales. Negocios reales. Resultados reales.",
       cta: {
         headlinePrefix: "¿Querés algo",
         headlineGradient: "así para tu negocio?",
@@ -420,37 +520,6 @@ export const translations = {
         primary: "Hablemos →",
         secondary: "Ver cómo trabajamos",
       },
-      projects: [
-        {
-          tag: "Automatización",
-          title: "Restaurante El Fogón",
-          metric: "-40% Errores",
-          description: "Automatización completa de pedidos con n8n conectando la app del mesero, cocina y facturación. Dashboard de ventas en tiempo real para el dueño.",
-          icons: ["restaurant", "auto_awesome", "dashboard"],
-        },
-        {
-          tag: "IA & Chatbots",
-          title: "Clínica Dental Sonrisas",
-          metric: "80% Llamadas",
-          description: "Recepcionista de IA que agenda citas, responde preguntas frecuentes y deriva urgencias. Integración directa con el sistema de turnos de la clínica.",
-          icons: ["smart_toy", "calendar_month", "call"],
-        },
-        {
-          tag: "Dashboards",
-          title: "Distribuidora Rápida",
-          metricLabel: "Reducción en Tiempo de Decisión",
-          metricValue: "-60%",
-          description: "Dashboard en tiempo real de inventario, rutas de entrega y estado de pedidos. Los gerentes ahora toman decisiones con datos frescos, no reportes de la semana pasada.",
-          wide: true,
-        },
-        {
-          tag: "Web & Chatbot",
-          title: "Tienda ModaStyle",
-          metric: "85% Automatizado",
-          description: "Chatbot de WhatsApp que gestiona pedidos, consultas de stock, pagos y seguimiento de envíos. La tienda dejó de perder ventas fuera de horario.",
-          icons: ["chat", "shopping_cart", "payments"],
-        },
-      ],
     },
   },
 } as const;

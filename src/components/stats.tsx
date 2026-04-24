@@ -3,8 +3,6 @@
 import { useLang } from "@/lib/lang-context";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
-const logos = ["TechCorp", "Systema", "Nexus", "Quantum"];
-
 export function Stats() {
   const { t } = useLang();
 
@@ -25,20 +23,6 @@ export function Stats() {
             </ScrollReveal>
           ))}
         </div>
-
-        {/* Client Logos */}
-        <ScrollReveal>
-          <div className="mt-20 flex flex-wrap justify-center gap-12 opacity-40">
-            {logos.map((name) => (
-              <div
-                key={name}
-                className="text-lg font-[family-name:var(--font-space-grotesk)] font-bold text-white/50 tracking-tight hover:opacity-100 transition-opacity duration-300 cursor-default"
-              >
-                {name}
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

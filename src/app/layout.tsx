@@ -39,6 +39,20 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <LangProvider>{children}</LangProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'auto';
+              }
+              window.addEventListener('pageshow', function(e) {
+                if (e.persisted) {
+                  window.location.reload();
+                }
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );

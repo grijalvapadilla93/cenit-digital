@@ -7,7 +7,7 @@ export function Process() {
   const { t } = useLang();
 
   return (
-    <section className="py-24 px-4 md:px-8 bg-surface-dim relative overflow-hidden">
+    <section className="py-24 px-4 md:px-8 bg-surface-dim relative overflow-hidden" id="process">
       <div className="max-w-screen-2xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-20">
