@@ -43,7 +43,14 @@ const websites = [
 ];
 
 // ─── CHATBOTS ───────────────────────────────────────────────────────────────
-const chatbots = [
+const chatbots: Array<{
+  id: number;
+  title: string;
+  subtitle: string;
+  category: string;
+  result: string;
+  convo: Array<{ from: "user" | "bot"; text: string }>;
+}> = [
   {
     id: 4,
     title: "Asistente de Restaurante",
